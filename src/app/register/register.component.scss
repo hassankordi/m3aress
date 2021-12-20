@@ -1,0 +1,57 @@
+.register-container {
+    font-family: "Josefin Sans", sans-serif;
+    margin: 50px;
+    .register-img {
+        // background-color: tomato;
+        text-align: center;
+        img {
+            width: 100%;
+        }
+        p {
+            font-size: 23px;
+            font-weight: 800;
+            margin: 30px 0px;
+        }
+        button {
+            background-color: #fed94c;
+            padding: 20px 48px;
+            margin: 30px 0px;
+        }
+    }
+    .register-inputs {
+        // background-color: teal;
+        display: flex;
+        align-items: center;
+        
+        div {
+            width: 100%;
+            input {
+                border: none;
+                border-bottom: 2px #fed94c solid;
+                margin: 50px 0px;
+    
+                &::placeholder {
+                    font-weight: 800;
+                    padding: 30px 50px;
+                    font-size: 25px;
+                }
+            }
+            b{
+               p{
+                text-align: end;
+                // background-color: #fed94c;
+               }
+            }
+            p{
+                text-align: center;
+                margin: 30px;
+                span{
+                    color: #fed94c;
+                    font-weight: 800;
+                    cursor: pointer;
+                }
+            }
+        }
+     
+    }
+}

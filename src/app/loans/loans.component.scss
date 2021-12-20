@@ -1,0 +1,81 @@
+.nav-container {
+    background-color: tomato;
+    background-image: linear-gradient(#fed94c, #f3c221);
+    padding: 10px;
+    .brand-image {
+        // background-color: teal;
+        img {
+            background-color: white;
+            width: 70px;
+            padding: 10px 8px;
+            border-radius: 50%;
+        }
+    }
+    .links-con {
+        ul {
+            display: flex;
+            list-style: none;
+            li {
+                margin: 10px;
+                a {
+                    font-family: "Josefin Sans", sans-serif;
+                    text-decoration: none;
+                    color: white;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .icons-con {
+        ul {
+            display: flex;
+            list-style: none;
+            li {
+                margin: 10px;
+                font-size: 20px;
+                color: white;
+            }
+        }
+    }
+}
+
+
+.loans-container {
+    margin: 50px 0px;
+    text-align: center;
+    h3 {
+        text-align: center;
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 700;
+    }
+  
+    img{
+        width: 80%;
+        margin: 50px 0px;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    }
+    p{
+        font-family: "Josefin Sans", sans-serif;
+        margin: 50px 0px;
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .row{
+        .col-6{
+            display: flex;
+            // background-color: teal;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        i{
+           color: #f3c221 ;
+           font-size: 30px;
+        }
+        span{
+            font-family: "Josefin Sans", sans-serif;
+            color:#707070 ;
+            font-size: 30px;
+        }
+    }
+   
+}

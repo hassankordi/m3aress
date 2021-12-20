@@ -1,0 +1,41 @@
+.pass-container{
+
+    height: 100vh;
+    // background-color: teal;
+    font-family: "Josefin Sans", sans-serif;
+
+    .box-container{
+        // background-color: tomato;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        text-align: center;
+        padding: 50px;
+        border-radius: 8px;
+        img{
+            width: 50%;
+            margin: 30px;
+        }
+        h3{
+            margin: 30px;
+            font-weight: 800;
+        }
+        input{
+            border: none;
+            border-bottom: solid 3px #f3c221;
+            margin: 30px 0px;
+            &::placeholder{
+                padding: 16px 30px;
+                font-weight: 800;
+                color: #000;
+                font-size: 22px;
+            }
+        }
+        button{
+            background-image: linear-gradient(#fed94c , #f3c221);
+            margin: 30px;
+            padding: 15px 50px;
+            font-size: 20px;
+            font-weight: 800;
+            border-radius: 30px;
+        }
+    }
+}

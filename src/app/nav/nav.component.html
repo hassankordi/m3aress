@@ -1,0 +1,37 @@
+<nav id="nav-container" class="nav-container">
+    <div class="row">
+        <div class="col-2">
+            <div class="brand-image">
+                <img class="" src="../../assets/5png/Group 10089.png" alt="">
+            </div>
+        </div>
+
+
+        <div class="col-7">
+            <div class="links-con">
+                <ul>
+                    <!-- class="under-line" -->
+                    <li [ngClass]="inHome ? 'under-line' :''" (click)="router()" routerLink="/home"><span>Home</span></li>
+                    <li [ngClass]="inNomination ? 'under-line':''" (click)="router()" routerLink="/nomination"><span>Nomination</span></li>
+                    <li [ngClass]="inService ? 'under-line':''" (click)="router()" routerLink="/service"><span>Services</span></li>
+                    <li (click)="scrollToContact()"><span>Contact</span></li>
+                    <li (click)="router()" routerLink="/register"><span>Register</span></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="icons-con">
+                <ul>
+                    <li routerLink="/premium"><i class="fas fa-crown"></i></li>
+                    <li><i class="fas fa-search"></i></li>
+                    <li><i class="fas fa-user"></i></li>
+                    <li><i class="far fa-bell"></i></li>
+                    <li><i class="fas fa-language"></i></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav>

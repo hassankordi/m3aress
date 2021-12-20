@@ -1,0 +1,119 @@
+<!-- <nav class="nav-container">
+    <div class="row">
+        <div class="col-2">
+            <div class="brand-image">
+                <img class="" src="../../assets/5png/Group 10089.png" alt="">
+            </div>
+        </div>
+
+
+        <div class="col-7">
+            <div class="links-con">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#"><u>Nomination</u></a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Register</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="icons-con">
+                <ul>
+                    <li><i class="fas fa-crown"></i></li>
+                    <li><i class="fas fa-search"></i></li>
+                    <li><i class="fas fa-user"></i></li>
+                    <li><i class="far fa-bell"></i></li>
+                    <li><i class="fas fa-language"></i></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav> -->
+<app-nav></app-nav>
+<section class="nomination-container">
+    <div class="container">
+        <h2>Nomination</h2>
+        <div class="nomination-box">
+            <p>Send an invitation to nominate one of your friends to find the right partner</p>
+
+            <select name="Choose Package" id="packages">
+                <option value="Choose Package" selected style="display: none; font-weight: 700;">Choose Package</option>
+                <option value="package1">package 1</option>
+                <option value="package2">package 2</option>
+                <option value="package3">package 3</option>
+            </select>
+
+            <input placeholder="First Name" type="text">
+            <input placeholder="Family Name" type="text">
+            <input placeholder="Mobile" type="text">
+            <!-- [tooltipField]="TooltipLabel.Name" -->
+            <!-- <ngx-intl-tel-input [cssClass]="''" [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
+            [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+            [selectFirstCountry]="false" [maxLength]="15" 
+           
+            [phoneValidation]="true" [separateDialCode]="true" name="phone" formControlName="phone">
+        </ngx-intl-tel-input> -->
+
+
+            <div class="row justify-content-center">
+                <div class="col-6 counter-con">
+                    <div (click)="discrease()" id="disCrease" class="discreaseBtn">
+                        -
+                    </div>
+                    <span class="counter">{{counter}}</span>
+                    <div (click)="increase()" id="inCrease" class="increaseBtn">
+                        +
+                    </div>
+                </div>
+                <div class="col-6 text-inv">
+                    عدد الدعاوات
+                </div>
+            </div>
+
+            <button (click)="openModal()" class="btn">
+                Send
+            </button>
+
+        </div>
+    </div>
+
+</section>
+<div id="myModal" class="myModal">
+    <div class="modalBox">
+        <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
+        <h3> Hassan Kordi </h3>
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div class="info-con">
+                    <span>Bouquets</span>
+                    <span>Premium packages</span>
+                </div>
+
+            </div>
+            <div class="col-12 mt-5">
+                <div class="info-con">
+                    <span>Mobile</span>
+                    <span> 01094454829</span>
+                </div>
+
+              
+            </div>
+            <div class="col-12 mt-5">
+                <div class="info-con">
+                    <span>Invitations Number</span>
+                    <span>5</span>
+                </div>
+
+            </div>
+        </div>
+        <button id="modalAcceptBtn" class="btn">Accept</button>
+
+    </div>
+</div>
+
+<app-send-us id="sendUs"></app-send-us>

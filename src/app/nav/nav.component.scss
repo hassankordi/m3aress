@@ -1,0 +1,48 @@
+.nav-container {
+    padding: 10px;
+    background-image: linear-gradient(#fed94c, #f3c221);
+    // background-image: none;
+
+    .brand-image {
+        // background-color: transparent;
+        img {
+            background-color: white;
+            width: 70px;
+            padding: 10px 8px;
+            border-radius: 50%;
+        }
+    }
+    .links-con {
+        .under-line{
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            font-weight: 800;
+            color: white;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+            li {
+                margin: 10px;
+                span {
+                    font-family: "Josefin Sans", sans-serif;
+                    text-decoration: none;
+                    color: white;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .icons-con {
+        ul {
+            display: flex;
+            list-style: none;
+            li {
+                margin: 10px;
+                font-size: 20px;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}
