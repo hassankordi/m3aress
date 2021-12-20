@@ -1,0 +1,199 @@
+// *{
+//     font-family: 'Josefin Sans', sans-serif;
+// }
+.adv-containrt {
+    font-family: "Josefin Sans", sans-serif;
+    margin: 50px 0px;
+
+    .adv-item-con {
+        // background-color: tomato;
+        // text-align: center;
+        display: flex;
+        justify-content: center;
+        .Adv-item {
+            text-align: center;
+            margin: 20px;
+            width: 200px;
+            height: 235px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            // background-color: tomato;
+            img {
+                width: 100%;
+                display: block;
+            }
+            button {
+                width: 100%;
+                background-image: linear-gradient(#fed94c, #f3c221);
+                height: 35px;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .Ads-item {
+        img {
+            width: 100%;
+        }
+    }
+}
+.sendUs-container {
+    // background-color: tomato;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 70px 0px;
+    width: 100%;
+    background-image: url("../../assets/5png/Group\ 10132.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    h2 {
+        color: white;
+        font-weight: 900;
+    }
+    .input-con {
+        margin: 12px;
+        input,
+        textarea {
+            border-radius: 8px;
+            padding: 12px 24px;
+            &::placeholder{
+                color: black;
+                font-weight: 700;
+            }
+        }
+    }
+    button {
+        margin-top: 30px;
+        padding: 17px 35px;
+        background-image: linear-gradient(#fed94c, #f3c221);
+        font-weight: 700;
+        
+    }
+
+    .footer-grid-container{
+        // background-color: tomato;
+        border: white 2px solid;
+        margin-top: 50px;
+        .footer-menu{
+            border: white 2px solid;
+            padding: 40px;
+            color: white;
+            font-weight: 700;
+            ul{
+                list-style: none;
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+
+        // 3 grids
+        .grid-container{
+            color: white;
+            text-align: center;
+            font-weight: 700;
+            padding: 30px;
+            border: white 2px solid;
+            .footer-icons-container{
+                padding: 30px;
+                display: flex;
+                justify-content: space-evenly;
+                img{
+                    width: 50px;
+                }
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+        .footer-grid-brand{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            img{
+                width: 70px;
+                margin: 15px 0px;
+            }
+
+        }
+        .footer-grid-data{
+            span{
+                margin: 15px;
+                font-size: 20px;
+            }
+        }
+        
+    }
+}
+
+
+
+.myModal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    overflow: auto;
+    display: none;
+
+    .modalBox {
+        text-align: center;
+        background-color: #efefef;
+        background-color: #fff;
+        border-radius: 8px;
+        position: relative;
+        width: 500px;
+        min-height: 70vh;
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 50px;
+        
+       
+        #closeModal {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            color: #fed94c;
+            cursor: pointer;
+        }
+        .info-con{
+            display: flex;
+            justify-content: space-between;
+            font-family: "Josefin Sans", sans-serif;
+            p{
+                font-size: 22px;
+                font-weight: 800;
+
+            }
+        }
+       #modalAcceptBtn{
+           position: absolute;
+           bottom: 80px;
+           left: 50%;
+        //    right: 50%;
+           transform: translate(-50% ,-50%);
+           background-image: linear-gradient(#fed94c , #F3C221);
+           padding: 6px 44px;
+           font-size: 20px;
+           font-weight: 700;
+           border-radius: 20px;
+
+       }
+       .checkbox{
+        font-size: 20px;
+        font-weight: 500;
+        //    label{
+              
+        //    }
+       }
+
+    }
+}
+
+

@@ -1,0 +1,102 @@
+<app-header></app-header>
+
+
+<section class="adv-containrt">
+    <div class="container">
+        <h2>Advertisement</h2>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+
+            <div class="col-lg-3 adv-item-con col-sm-6 col-12">
+                <div routerLink="/subscription" class="Adv-item">
+                    <img src="../../assets/5png/5e4d106a92d46.png" alt="">
+                    <button class="btn item-btn">Subscriptions</button>
+                </div>
+            </div>
+            <div class="col-lg-3 adv-item-con col-sm-6 col-12">
+                <div routerLink="/marital-advice" class="Adv-item">
+                    <img src="../../assets/5png/5e4d119238539.png" alt="">
+                    <button class="btn item-btn">Marital advice</button>
+                </div>
+            </div>
+            <div class="col-lg-3 adv-item-con col-sm-6 col-12">
+                <div routerLink="/loans" class="Adv-item">
+                    <img src="../../assets/5png/5e51037ac6dd3.png" alt="">
+                    <button class="btn item-btn">Loans and facilities</button>
+                </div>
+            </div>
+            <!-- pop up and router from it  -->
+            <div (click)="openModal()" class="col-lg-3 adv-item-con col-sm-6 col-12">
+                <div class="Adv-item">
+                    <img src="../../assets/5png/5e510681925ab.png" alt="">
+                    <button class="btn item-btn">Life partner</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>About</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error fuga eos ad quibusdam non asperiores
+                    fugiat sunt. Asperiores ad saepe explicabo delectus quae doloribus error magni, quidem, dolorem
+                    obcaecati qui.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Privacy and Policy</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error fuga eos ad quibusdam non asperiores
+                    fugiat sunt. Asperiores ad saepe explicabo delectus quae doloribus error magni, quidem, dolorem
+                    obcaecati qui.</p>
+            </div>
+        </div>
+
+        <h2 class="mt-5">Ads</h2>
+        <div class="row">
+            <div class="col-md-3 col-2">
+                <div class="Ads-item">
+                    <img src="../../assets/5png/Group 9969.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-3 col-2">
+                <div class="Ads-item">
+                    <img src="../../assets/5png/Group 9969.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-3 col-2">
+                <div class="Ads-item">
+                    <img src="../../assets/5png/Group 9969.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-3 col-2">
+                <div class="Ads-item">
+                    <img src="../../assets/5png/Group 9969.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<div id="myModal" class="myModal">
+    <div class="modalBox">
+        <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
+       
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div class="info-con">
+                    <p>الرجاء التحقق من انك مشترك في احد الباقات المتوفرة لامكانية ادخال مواصفات شريك الحياة</p>
+                </div>
+
+            </div>
+         
+        </div>
+        <button routerLink="/life-partner" id="modalAcceptBtn" class="btn">Packages Types</button>
+
+    </div>
+</div>
+<app-send-us id="sendUs"></app-send-us>

@@ -1,0 +1,95 @@
+<app-nav></app-nav>
+<section class="profile-container">
+    <div class="container">
+        <div class="row justify-content-center my-5">
+            <div class="col-md-6 user-info">
+                <div>
+                    <p>Hassan Kordi</p>
+                    <p>01094454829</p>
+                </div>
+
+            </div>
+            <div class="col-md-6 user-btns">
+                <div>
+                    <button routerLink="/bending-maching" class="btn">Bending Maching</button>
+                    <button routerLink="/life-partner" class="btn">Life Partner Date</button>
+                    <button routerLink="/editProfile" class="btn">Edit Profile</button>
+                </div>
+
+            </div>
+        </div>
+        <span class="boq-span">Your Bouquests</span>
+        <div class="row justify-content-center Bouquest-container">
+            <div class="col-md-4">
+                <p>Bouquests Plain</p>
+                <p>Nominations Plain <span>15</span></p>
+                <p>Search Plain <span>4</span></p>
+            </div>
+            <div class="col-md-4">
+                <p>Bouquests search</p>
+                <p>Search <span>4</span></p>
+               
+            </div>
+            <div class="col-md-4">
+                <p>Bouquests Premium</p>
+                <p>Premium <span>7 Days</span></p>
+               
+            </div>
+
+
+        </div>
+        <div class="d-flex btns-con justify-content-evenly">
+            <button style="background-color: #F3C221;" class="btn">Appearance</button>
+            <button class="btn">Lifestyle</button>
+            <button class="btn">Cultural Values</button>
+        </div>
+        <div class="appearance-box">
+            <h3>Appearance</h3>
+            <div class="w-100 row justify-content-center profile-inputs">
+         
+             <div>
+                <input placeholder="Length" class="form-control" type="text">
+                <input  placeholder="Weight" class="form-control" type="text">
+                <input  placeholder="Appearance" class="form-control" type="text">
+                <input  placeholder="Body Type" class="form-control" type="text">
+                <input  placeholder="Skin Color" class="form-control" type="text">
+                <input  placeholder="Hair Color" class="form-control" type="text">
+                <input  placeholder="Hair Type" class="form-control" type="text">
+                <input  placeholder="Hair Length" class="form-control" type="text">
+                <button (click)="openModal()" class="btn com-btn">Completing</button>
+             </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div id="myModal" class="myModal">
+    <div class="modalBox">
+        <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
+        <h3> <i class="fas fa-check"></i> </h3>
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div class="info-con">
+                    <p>تهانينا</p>
+                </div>
+
+            </div>
+            <div class="col-12 mt-5">
+                <div class="info-con">
+                   <span>لقد اكملت من بيانات الملف الشخصي</span>
+                </div>
+
+              
+            </div>
+            <div class="col-12 mt-5">
+                <div class="info-con">
+                   <p>100%</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- <button id="modalAcceptBtn" class="btn">Accept</button> -->
+
+    </div>
+</div>
+<app-send-us></app-send-us>

@@ -1,0 +1,50 @@
+
+.header-container {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../assets/5png/Group\ 10132.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .nav-container {
+        // background-color: tomato;
+        padding: 10px;
+        .brand-image {
+            // background-color: teal;
+            img {
+                background-color: white;
+                width: 70px;
+                padding: 10px 8px;
+                border-radius: 50%;
+            }
+        }
+        .links-con {
+            ul {
+                display: flex;
+                list-style: none;
+                li {
+                    margin: 10px;
+                    span {
+                        font-family: "Josefin Sans", sans-serif;
+                        text-decoration: none;
+                        color: white;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .icons-con {
+            ul {
+                display: flex;
+                list-style: none;
+                li {
+                    margin: 10px;
+                    font-size: 20px;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<app-header></app-header>
+
+<section class="sub-container">
+    <div class="container">
+        <h2>Subscriptions</h2>
+        <ul class="sub-menu">
+            <li>Bouquets Plain</li>
+            <li>Bouquets Search</li>
+            <li>Bouquets Premium</li>
+        </ul>
+
+        <div class="row myRow">
+            <div class="main-img col-12">
+                <div class="layer">
+                </div>
+                <div class="sub-item">
+
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, iusto itaque placeat sequi
+                        rerum totam sed facere quas officiis, repudiandae dolore fuga. Quam minus excepturi dolore, nisi
+                        officiis culpa rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias eos
+                        eligendi, ipsa quam unde numquam velit distinctio iste repellat est deserunt, aperiam, tempora
+                        porro cupiditate sit asperiores ex? Dolore, ex.</p>
+                    <button class="btn" (click)="openModal()">Subscripe package</button>
+                 
+                </div>
+            </div>
+          <div id="myModal" class="myModal">
+            <div class="modalBox">
+                <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
+                <h3>الشروط و الاحكام</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam assumenda esse ab
+                    repudiandae rerum nihil consequuntur veritatis delectus minus molestias, iure provident
+                    culpa perferendis nostrum odio omnis maxime. Delectus, perspiciatis.</p>
+                    <label class="checkbox">
+                        اوافق علي الشروط و الاحكام 
+                        <input type="checkbox" value="accept" id="remember_me"> 
+                    </label>
+                    <button id="modalAcceptBtn" class="btn">Accept</button>
+
+            </div>
+          </div>
+
+            <div class="col-md-6">
+                <div class="left-item sub-item">
+                    <div>
+                        <p>Package Of 50 Dinars</p>
+                        <span> 8 Nominations Are Nominated With Second Level Filtering Priority</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="right-item sub-item">
+                    <div class="layer">
+
+                    </div>
+                    <div>
+                        <p>Package Of 100 Dinars</p>
+                        <span> 20 Nominations Are Nominated With First-Level Filtering Priority</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<app-send-us></app-send-us>

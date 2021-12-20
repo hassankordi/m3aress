@@ -1,0 +1,189 @@
+// .nav-container {
+//     background-color: tomato;
+//     background-image: linear-gradient(#fed94c, #f3c221);
+//     padding: 10px;
+//     .brand-image {
+//         // background-color: teal;
+//         img {
+//             background-color: white;
+//             width: 70px;
+//             padding: 10px 8px;
+//             border-radius: 50%;
+//         }
+//     }
+//     .links-con {
+//         ul {
+//             display: flex;
+//             list-style: none;
+//             li {
+//                 margin: 10px;
+//                 a {
+//                     font-family: "Josefin Sans", sans-serif;
+//                     text-decoration: none;
+//                     color: white;
+//                     font-size: 20px;
+//                 }
+//             }
+//         }
+//     }
+//     .icons-con {
+//         ul {
+//             display: flex;
+//             list-style: none;
+//             li {
+//                 margin: 10px;
+//                 font-size: 20px;
+//                 color: white;
+//             }
+//         }
+//     }
+// }
+
+.premium-container{
+
+    font-family: "Josefin Sans", sans-serif;
+    h2{
+        text-align: center;
+        margin: 40px 0px;
+    }
+
+    .semi-nav{
+        padding: 30px 40px;
+        background-color: hsl(0, 0%, 98%);
+        box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+        margin: 50px 0px;
+        img{
+            margin: 0 30px;
+        }
+        span{
+
+            font-size: 22px;
+            font-weight: 500;
+            
+        }
+    }
+    .container{
+        text-align: end;
+        .row{
+
+            margin: 30px 0px;
+            justify-content: space-evenly;
+        }
+    }
+    .premium-item{
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+        background-color: hsl(0, 0%, 98%);
+        // box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+        transition: all 0.4s ease-in;
+        &:hover{
+
+            p{
+                font-size: 22px;
+                font-weight: 800;
+                letter-spacing: 3px;
+            }
+        }
+        .per{
+            color: #f3c221;
+            font-size: 40px;
+        }
+        .appro{
+            margin: 0px 20px;
+            color: #a4a4a4;
+            font-weight: 700;
+        }
+        p{
+            transition: all 0.2s ease-in;
+            font-size: 22px;
+            font-weight: 800;
+            // letter-spacing: 3px;
+        }
+    }
+    .see-btn{
+        // text-align: end;
+        background-color: hsl(46, 90%, 54%);
+        padding: 15px 48px;
+        font-weight: 700;
+        font-size: 22px;
+        border-radius: 20px;
+        &:hover{
+            background-color: hsl(46, 90%, 65%);
+        }
+
+    }
+}
+
+
+.myModal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    overflow: auto;
+    display: none;
+
+    .modalBox {
+        text-align: center;
+        background-color: #efefef;
+        background-color: #fff;
+        border-radius: 8px;
+        position: relative;
+        width: 500px;
+        min-height: 94vh;
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 50px;
+        h3{
+            font-size: 35px;
+            color: #fed94c;
+        }
+       
+        #closeModal {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            color: #fed94c;
+            cursor: pointer;
+        }
+        .info-con{
+            display: flex;
+            justify-content: space-between;
+            font-family: "Josefin Sans", sans-serif;
+            span{
+                font-size: 22px;
+                font-weight: 800;
+
+            }
+        }
+       #modalAcceptBtn{
+           position: absolute;
+           bottom: 80px;
+           left: 50%;
+           right: 50%;
+           transform: translate(-50% ,-50%);
+           background-image: linear-gradient(#fed94c , #F3C221);
+           padding: 12px 24px;
+           font-size: 20px;
+           font-weight: 700;
+
+       }
+       .checkbox{
+        font-size: 20px;
+        font-weight: 500;
+        //    label{
+              
+        //    }
+       }
+
+    }
+}
