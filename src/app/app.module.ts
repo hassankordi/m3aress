@@ -27,6 +27,10 @@ import { BendingMachingComponent } from './bending-maching/bending-maching.compo
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { VerifyNumsComponent } from './verify-nums/verify-nums.component';
 import { NewPassComponent } from './new-pass/new-pass.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -57,7 +61,11 @@ import { NewPassComponent } from './new-pass/new-pass.component';
     BrowserModule,
     AppRoutingModule ,
     NgxIntlTelInputModule ,
-    BsDropdownModule
+    BsDropdownModule ,
+
+    ReactiveFormsModule ,
+    HttpClientModule
+    
    
   
   ],

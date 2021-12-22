@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-bending-maching',
@@ -15,7 +16,11 @@ export class BendingMachingComponent implements OnInit {
   // machineStep: string = 'side-stepper-circle';
   // resourceStep: string = 'side-stepper-circle';
   // tapSidename: string = 'Set Time';
-  constructor() {}
+  constructor(private API:ApiService) {
+   this.API.getBendingMaching().subscribe(
+     (res)=>{console.log(res);} ,(err)=>{console.log(err);
+     })
+  }
 
   ngOnInit(): void {}
   // sideStepper(stepNumber) {
