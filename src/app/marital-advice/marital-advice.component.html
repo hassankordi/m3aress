@@ -41,12 +41,14 @@
     <!-- <div class="container"> -->
         <div class="row justify-content-center mt-5">
 
-            <div class="col-lg-3 adv-item-con col-sm-6 col-12">
+            <div *ngFor="let item of data" class="col-lg-3 adv-item-con col-sm-6 col-12">
                 <div routerLink="subscription" class="Adv-item">
-                    <img src="../../assets/5png/5e4d106a92d46.png" alt="">
-                    <button class="btn item-btn">Subscriptions</button>
+                    <!-- {{item.image}} -->
+                    <img [src]="imgUrl+item.image" alt="">
+                    <button class="btn item-btn">{{item.name}}</button>
                 </div>
             </div>
+<!--             
             <div class="col-lg-3 adv-item-con col-sm-6 col-12">
                 <div routerLink="marital-advice" class="Adv-item">
                     <img src="../../assets/5png/5e4d119238539.png" alt="">
@@ -64,8 +66,10 @@
                     <img src="../../assets/5png/5e510681925ab.png" alt="">
                     <button class="btn item-btn">Life partner</button>
                 </div>
-            </div>
+            </div> -->
         </div>
+
+<!--         
         <div class="row justify-content-center mt-5">
 
             <div class="col-lg-3 adv-item-con col-sm-6 col-12">
@@ -119,7 +123,7 @@
                     <button class="btn item-btn">Life partner</button>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
         <button class="see-more-btn btn">See More</button>
