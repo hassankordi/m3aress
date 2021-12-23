@@ -10,8 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { MaritalAdviceComponent } from './marital-advice/marital-advice.component';
 import { LoansComponent } from './loans/loans.component';
 import { NominationComponent } from './nomination/nomination.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ServiceComponent } from './service/service.component';
@@ -30,8 +29,8 @@ import { NewPassComponent } from './new-pass/new-pass.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { NgxNavbarModule } from 'ngx-bootstrap-navbar';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -55,21 +54,20 @@ import { HttpClientModule } from '@angular/common/http';
     BendingMachingComponent,
     ForgetPasswordComponent,
     VerifyNumsComponent,
-    NewPassComponent
+    NewPassComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule ,
-    NgxIntlTelInputModule ,
-    BsDropdownModule ,
-
-    ReactiveFormsModule ,
-    HttpClientModule
-    
-   
-  
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NgxIntlTelInputModule,
+    BsDropdownModule,
+    NgxNavbarModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

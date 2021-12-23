@@ -3,13 +3,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  images = [
+    '../../assets/5png/Group 10132.png',
+    '../../assets/5png/Group 10132.png',
+    '../../assets/5png/Group 10132.png',
+  ];
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

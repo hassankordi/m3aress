@@ -1,42 +1,25 @@
-<section class="header-container">
-    <!-- <nav class="nav-container">
-        <div class="row">
-            <div class="col-2">
-                <div class="brand-image">
-                    <img class="" src="../../assets/5png/Group 10089.png" alt="">
-                </div>
-            </div>
-
-
-            <div class="col-7">
-                <div class="links-con">
-                    <ul>
-                        <li><span><u>Home</u></span></li>
-                        <li routerLink="/nomination"><span>Nomination</span></li>
-                        <li routerLink="/service"><span>Services</span></li>
-                        <li><span>Contact</span></li>
-                        <li routerLink="/register"><span>Register</span></li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="icons-con">
-                    <ul>
-                        <li routerLink="premium"><i class="fas fa-crown"></i></li>
-                        <li><i class="fas fa-search"></i></li>
-                        <li><i class="fas fa-user"></i></li>
-                        <li><i class="far fa-bell"></i></li>
-                        <li><i class="fas fa-language"></i></li>
-
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </nav> -->
-<app-nav></app-nav>
+<div class="swiper">
+  <div class="" style="position: absolute; z-index: 55555">
+    <app-nav></app-nav>
     <div>
-        <h1>WELCOME TO MAARES</h1>
+      <h1>WELCOME TO MAARES</h1>
     </div>
-</section>
+  </div>
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <section class="header-container"></section>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <section class="header-container"></section>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <section class="header-container"></section>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

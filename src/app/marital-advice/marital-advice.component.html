@@ -1,54 +1,19 @@
-
-  <nav class="nav-container">
-    <div class="row">
-        <div class="col-2">
-            <div class="brand-image">
-                <img class="" src="../../assets/5png/Group 10089.png" alt="">
-            </div>
-        </div>
-
-
-        <div class="col-7">
-            <div class="links-con">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Nomination</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Register</a></li>
-
-                </ul>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="icons-con">
-                <ul>
-                    <li><i class="fas fa-crown"></i></li>
-                    <li><i class="fas fa-search"></i></li>
-                    <li><i class="fas fa-user"></i></li>
-                    <li><i class="far fa-bell"></i></li>
-                    <li><i class="fas fa-language"></i></li>
-
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</nav>
-
+<app-nav></app-nav>
 <section class="matiral-container">
-    <h3>Matiral Advice</h3>
-    <!-- <div class="container"> -->
-        <div class="row justify-content-center mt-5">
-
-            <div *ngFor="let item of data" class="col-lg-3 adv-item-con col-sm-6 col-12">
-                <div routerLink="subscription" class="Adv-item">
-                    <!-- {{item.image}} -->
-                    <img [src]="imgUrl+item.image" alt="">
-                    <button class="btn item-btn">{{item.name}}</button>
-                </div>
-            </div>
-<!--             
+  <h3>Matiral Advice</h3>
+  <!-- <div class="container"> -->
+  <div class="row justify-content-center mt-5">
+    <div
+      *ngFor="let item of data"
+      class="col-lg-3 adv-item-con col-sm-6 col-12"
+    >
+      <div routerLink="subscription" class="Adv-item">
+        <!-- {{item.image}} -->
+        <img [src]="imgUrl + item.image" alt="" />
+        <button class="btn item-btn">{{ item.name }}</button>
+      </div>
+    </div>
+    <!--             
             <div class="col-lg-3 adv-item-con col-sm-6 col-12">
                 <div routerLink="marital-advice" class="Adv-item">
                     <img src="../../assets/5png/5e4d119238539.png" alt="">
@@ -67,9 +32,9 @@
                     <button class="btn item-btn">Life partner</button>
                 </div>
             </div> -->
-        </div>
+  </div>
 
-<!--         
+  <!--         
         <div class="row justify-content-center mt-5">
 
             <div class="col-lg-3 adv-item-con col-sm-6 col-12">
@@ -125,8 +90,7 @@
             </div>
         </div> -->
 
-
-        <button class="see-more-btn btn">See More</button>
-    <!-- </div> -->
+  <button class="see-more-btn btn">See More</button>
+  <!-- </div> -->
 </section>
 <app-send-us></app-send-us>
