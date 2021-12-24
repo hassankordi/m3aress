@@ -1,10 +1,9 @@
-.nav-container {
+.nav-container,.nav-container2 {
   padding: 10px;
   background-image: linear-gradient(#fed94c, #f3c221);
-  // background-image: none;
-
+  
+  width: 100% !important;
   .brand-image {
-    // background-color: transparent;
     img {
       background-color: white;
       width: 70px;
@@ -49,24 +48,25 @@
 }
 
 .nav-container2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
   display: none;
   line-height: 40px;
-  height: 40px;
   background-color: #fed94c;
 
   i {
     cursor: pointer;
     color: #fff;
     font-size: 1.75rem;
-    float: right;
-    margin: 5px 10px;
     text-shadow: 1px 1px 0px gray;
   }
 }
 .nav-list {
   display: none;
   background-color: rgb(244, 255, 203);
-  p {
+  p ,li {
     cursor: pointer;
     height: 30px;
     padding: 0px 20px;
@@ -78,12 +78,38 @@
     }
   }
 }
-@media screen and (max-width: 900px) {
+.newLinks-con ,.newIcons-con {
+  background-color: #f3c221;
+  ul {
+    list-style: none;
+    li {
+      margin: 10px;
+      cursor: pointer;
+      span {
+        font-family: "Josefin Sans", sans-serif;
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.brand-image {
+  // background-color: transparent;
+  img {
+    background-color: white;
+    width: 70px;
+    padding: 10px 8px;
+    border-radius: 50%;
+  }
+}
+@media screen and (max-width: 950px) {
   .nav-container {
     display: none;
   }
   .nav-container2 {
-    display: block;
+    display: flex;
   }
   .nav-list {
     display: block;
