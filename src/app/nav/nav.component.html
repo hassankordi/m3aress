@@ -51,12 +51,51 @@
   </div>
 </nav>
 
+
+
 <div class="nav-container2">
+ <div class="brand-image">
+  <img src="../../assets/5png/Group 10089.png" alt="">
+ </div>
   <i class="fas fa-bars" (click)="toggle()"></i>
 </div>
-<div class="nav-list" *ngIf="navToggle">
-  <p>sdv</p>
-  <p>sdv</p>
-  <p>sdv</p>
-  <p>sdv</p>
+
+<div class="nav-list newLinks-con" *ngIf="navToggle">
+ 
+  <ul>
+    <li
+      [ngClass]="inHome ? 'under-line' : ''"
+      (click)="router()"
+      routerLink="/home"
+    >
+      <span>Home</span>
+    </li>
+    <li
+      [ngClass]="inNomination ? 'under-line' : ''"
+      (click)="router()"
+      routerLink="/nomination"
+    >
+      <span>Nomination</span>
+    </li>
+    <li
+      [ngClass]="inService ? 'under-line' : ''"
+      (click)="router()"
+      routerLink="/service"
+    >
+      <span>Services</span>
+    </li>
+    <li (click)="scrollToContact()"><span>Contact</span></li>
+    <li (click)="router()" routerLink="/register">
+      <span>Register</span>
+    </li>
+  </ul>
+  <div class="icons-con newIcons-con">
+    <ul>
+      <li routerLink="/premium"><i class="fas fa-crown"></i></li>
+      <li><i class="fas fa-search"></i></li>
+      <li><i class="fas fa-user"></i></li>
+      <!-- <li><i class="far fa-bell"></i></li> -->
+    </ul>
+  </div>
+
 </div>

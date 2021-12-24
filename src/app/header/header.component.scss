@@ -6,6 +6,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  display: flex;
+  align-items: flex-end;
+  .head-h1{
+    color: white;
+    margin: 50px;
+  }
+
 }
 .swiper {
   height: 100%;
@@ -14,4 +21,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  // .head-h11{
+  //  color: teal;
+  // }
+  
 }
