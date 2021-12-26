@@ -40,6 +40,53 @@
  <div class="container text-center">
     <h2>Service</h2>
     <div class="row">
+        <div (mouseenter)="openSer(item)" *ngFor="let item of service" class="service-item col-md-3 col-6">
+            
+            <img [src]="imgUrl + item.image" alt="">
+            <div id="layer" class="layer">
+                <h4>{{serviceDetailes.companyName}}</h4>
+                <p><span><i class="fas fa-phone-alt"></i></span> <span>{{serviceDetailes.phone}}</span></p>
+                <p><span><i class="fab fa-whatsapp"></i></span> <span>{{serviceDetailes.whatsAppNumber}}</span></p>
+                <p><span><i class="fas fa-envelope"></i></span> <span>{{serviceDetailes.email}}</span></p>
+                <p><span><i class="fas fa-map-marker-alt"></i></span> <span>{{serviceDetailes.address}}</span></p>
+            </div>
+
+        </div>
+        <!-- <div class="service-item col-md-3 col-6">
+            <img src="../../assets/5png/New folder/Mask.png" alt="">
+            <div class="layer">
+                <h4>Company Name</h4>
+                <p><span><i class="fas fa-phone-alt"></i></span> <span>55555</span></p>
+                <p><span><i class="fab fa-whatsapp"></i></span> <span>55555</span></p>
+                <p><span><i class="fas fa-envelope"></i></span> <span>55555</span></p>
+                <p><span><i class="fas fa-map-marker-alt"></i></span> <span>55555</span></p>
+            </div>
+
+        </div>
+        <div class="service-item col-md-3 col-6">
+            <img src="../../assets/5png/New folder/broccoli-shadow.png" alt="">
+            <div class="layer">
+                <h4>Company Name</h4>
+                <p><span><i class="fas fa-phone-alt"></i></span> <span>55555</span></p>
+                <p><span><i class="fab fa-whatsapp"></i></span> <span>55555</span></p>
+                <p><span><i class="fas fa-envelope"></i></span> <span>55555</span></p>
+                <p><span><i class="fas fa-map-marker-alt"></i></span> <span>55555</span></p>
+            </div>
+
+        </div>
+        <div class="service-item col-md-3 col-6">
+            <img src="../../assets/5png/New folder/Mask.png" alt="">
+            <div class="layer">
+                <h4>Company Name</h4>
+                <p><span><i class="fas fa-phone-alt"></i></span> <span>55555</span></p>
+                <p><span><i class="fab fa-whatsapp"></i></span> <span>55555</span></p>
+                <p><span><i class="fas fa-envelope"></i></span> <span>55555</span></p>
+                <p><span><i class="fas fa-map-marker-alt"></i></span> <span>55555</span></p>
+            </div>
+
+        </div> -->
+    </div>
+    <!-- <div class="row">
         <div class="service-item col-md-3 col-6">
             <img src="../../assets/5png/New folder/Mask.jpg" alt="">
             <div class="layer">
@@ -84,53 +131,7 @@
             </div>
 
         </div>
-    </div>
-    <div class="row">
-        <div class="service-item col-md-3 col-6">
-            <img src="../../assets/5png/New folder/Mask.jpg" alt="">
-            <div class="layer">
-                <h4>Company Name</h4>
-                <p><span><i class="fas fa-phone-alt"></i></span> <span>55555</span></p>
-                <p><span><i class="fab fa-whatsapp"></i></span> <span>55555</span></p>
-                <p><span><i class="fas fa-envelope"></i></span> <span>55555</span></p>
-                <p><span><i class="fas fa-map-marker-alt"></i></span> <span>55555</span></p>
-            </div>
-
-        </div>
-        <div class="service-item col-md-3 col-6">
-            <img src="../../assets/5png/New folder/Mask.png" alt="">
-            <div class="layer">
-                <h4>Company Name</h4>
-                <p><span><i class="fas fa-phone-alt"></i></span> <span>55555</span></p>
-                <p><span><i class="fab fa-whatsapp"></i></span> <span>55555</span></p>
-                <p><span><i class="fas fa-envelope"></i></span> <span>55555</span></p>
-                <p><span><i class="fas fa-map-marker-alt"></i></span> <span>55555</span></p>
-            </div>
-
-        </div>
-        <div class="service-item col-md-3 col-6">
-            <img src="../../assets/5png/New folder/broccoli-shadow.png" alt="">
-            <div class="layer">
-                <h4>Company Name</h4>
-                <p><span><i class="fas fa-phone-alt"></i></span> <span>55555</span></p>
-                <p><span><i class="fab fa-whatsapp"></i></span> <span>55555</span></p>
-                <p><span><i class="fas fa-envelope"></i></span> <span>55555</span></p>
-                <p><span><i class="fas fa-map-marker-alt"></i></span> <span>55555</span></p>
-            </div>
-
-        </div>
-        <div class="service-item col-md-3 col-6">
-            <img src="../../assets/5png/New folder/Mask.png" alt="">
-            <div class="layer">
-                <h4>Company Name</h4>
-                <p><span><i class="fas fa-phone-alt"></i></span> <span>55555</span></p>
-                <p><span><i class="fab fa-whatsapp"></i></span> <span>55555</span></p>
-                <p><span><i class="fas fa-envelope"></i></span> <span>55555</span></p>
-                <p><span><i class="fas fa-map-marker-alt"></i></span> <span>55555</span></p>
-            </div>
-
-        </div>
-    </div>
+    </div> -->
  </div>
 </section>
 <app-send-us></app-send-us>

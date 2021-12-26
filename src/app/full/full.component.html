@@ -56,7 +56,12 @@
 
         <h2 class="mt-5">Ads</h2>
         <div class="row">
-            <div class="col-md-3 col-2">
+            <div *ngFor="let img of images" class="col-md-3 col-2">
+                <div class="Ads-item">
+                    <img [src]="imgUrl+img.image" alt="">
+                </div>
+            </div>
+            <!-- <div class="col-md-3 col-2">
                 <div class="Ads-item">
                     <img src="../../assets/5png/Group 9969.png" alt="">
                 </div>
@@ -70,12 +75,7 @@
                 <div class="Ads-item">
                     <img src="../../assets/5png/Group 9969.png" alt="">
                 </div>
-            </div>
-            <div class="col-md-3 col-2">
-                <div class="Ads-item">
-                    <img src="../../assets/5png/Group 9969.png" alt="">
-                </div>
-            </div>
+            </div> -->
 
         </div>
 

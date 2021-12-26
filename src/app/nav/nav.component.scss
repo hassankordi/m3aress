@@ -1,7 +1,8 @@
-.nav-container,.nav-container2 {
+.nav-container,
+.nav-container2 {
   padding: 10px;
   background-image: linear-gradient(#fed94c, #f3c221);
-  
+
   width: 100% !important;
   .brand-image {
     img {
@@ -47,6 +48,48 @@
   }
 }
 
+
+
+  
+.list-tog{
+  position: relative;
+  &:hover{
+    .nom-ul{
+      display: flex !important;
+    }
+  }
+
+ 
+}
+.nom-ul {
+  list-style: none;
+  // background-color: #f3c221;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 30;
+  top: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px !important;
+  display: none !important;
+  transition: all 0.6s ease-in; 
+  li{
+    &:hover{
+      
+        background-color: rgba(0, 0, 0, 0.3);
+    
+    }
+  }
+  &:hover{
+   
+    display: flex !important;
+  }
+
+
+}
+
+
+
 .nav-container2 {
   display: flex;
   justify-content: space-between;
@@ -66,7 +109,8 @@
 .nav-list {
   display: none;
   background-color: rgb(244, 255, 203);
-  p ,li {
+  p,
+  li {
     cursor: pointer;
     height: 30px;
     padding: 0px 20px;
@@ -78,7 +122,8 @@
     }
   }
 }
-.newLinks-con ,.newIcons-con {
+.newLinks-con,
+.newIcons-con {
   background-color: #f3c221;
   ul {
     list-style: none;

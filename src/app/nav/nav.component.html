@@ -21,7 +21,14 @@
             (click)="router()"
             routerLink="/nomination"
           >
-            <span>Nomination</span>
+            <span class="list-tog">Nomination
+
+              <ul class="nom-ul" >
+                <li routerLink="/nom-result" >Result</li>
+                <li routerLink="/nomination">Nomination</li>
+              </ul>
+            </span>
+            
           </li>
           <li
             [ngClass]="inService ? 'under-line' : ''"
@@ -41,8 +48,17 @@
       <div class="icons-con">
         <ul>
           <li routerLink="/premium"><i class="fas fa-crown"></i></li>
-          <li><i class="fas fa-search"></i></li>
-          <li><i class="fas fa-user"></i></li>
+          <li routerLink="/search"><i class="fas fa-search"></i></li>
+          <li routerLink="/profile">
+           
+            <span class="list-tog"> <i class="fas fa-user"></i>
+
+              <ul class="nom-ul" >
+                <li routerLink="/profile" >Profile </li>
+                <li>logOut</li>
+              </ul>
+            </span>
+          </li>
           <li><i class="far fa-bell"></i></li>
           <li><i class="fas fa-language"></i></li>
         </ul>
@@ -75,7 +91,13 @@
       (click)="router()"
       routerLink="/nomination"
     >
-      <span>Nomination</span>
+    <span class="list-tog">Nomination
+
+      <ul class="nom-ul" >
+        <li routerLink="/nom-result" >Result</li>
+        <li routerLink="/nomination">Nomination</li>
+      </ul>
+    </span>
     </li>
     <li
       [ngClass]="inService ? 'under-line' : ''"
@@ -92,8 +114,17 @@
   <div class="icons-con newIcons-con">
     <ul>
       <li routerLink="/premium"><i class="fas fa-crown"></i></li>
-      <li><i class="fas fa-search"></i></li>
-      <li><i class="fas fa-user"></i></li>
+      <li routerLink="/search"><i class="fas fa-search"></i></li>
+      <li routerLink="/profile">
+           
+        <span class="list-tog"> <i class="fas fa-user"></i>
+
+          <ul class="nom-ul" >
+            <li routerLink="/profile" >Profile </li>
+            <li>logOut</li>
+          </ul>
+        </span>
+      </li>
       <!-- <li><i class="far fa-bell"></i></li> -->
     </ul>
   </div>

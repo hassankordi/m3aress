@@ -6,8 +6,20 @@
     </div> -->
   </div>
   <ngb-carousel>
-    <ng-template ngbSlide>
+    <!-- *ngFor="let img of images" -->
+    <ng-template *ngFor="let img of images" ngbSlide>
       <div class="picsum-img-wrapper">
+        <!-- imgUrl+img -->
+        <section [ngStyle]="{ 'background-image': 'url(' + imgUrl+img.image + ')'}" class="header-container">
+          <div class="head-h1">
+            <h1>WELCOME TO MAARES</h1>
+          </div>
+        </section>
+      </div>
+    </ng-template>
+ <!---   <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+      
         <section class="header-container">
           <div class="head-h1">
             <h1>WELCOME TO MAARES</h1>
@@ -17,21 +29,12 @@
     </ng-template>
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
-        <section style="background-image: url('.././../assets/5png/crowns.png');" class="header-container">
-          <div class="head-h1">
-            <h1>WELCOME TO MAARES</h1>
-          </div>
-        </section>
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
         <section class="header-container">
           <div class="head-h1">
             <h1>WELCOME TO MAARES</h1>
           </div>
         </section>
       </div>
-    </ng-template>
+    </ng-template> -->
   </ngb-carousel>
 </div>

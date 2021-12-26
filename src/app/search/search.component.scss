@@ -1,0 +1,39 @@
+
+.search-section{
+
+    .btn-con{
+
+        button{
+            padding: 12px 45px ;
+            display: block;
+        }
+
+    }
+    margin: 50px;
+    h2{
+        font-family: "Josefin Sans", sans-serif;
+    }
+
+    .row-container{
+        margin-top: 40px;
+        background-color: hsl(0, 0%, 98%);
+        // box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+        padding: 20px;
+        justify-content: space-between;
+        align-items: center;
+    
+        .info-con{
+            font-weight: 700;
+            span{
+                margin-right: 20px;
+            }
+        }
+        .time-con{
+            text-align: end;
+            i{
+                cursor: pointer;
+            }
+        }
+    }
+}

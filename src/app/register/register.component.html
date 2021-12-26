@@ -12,6 +12,8 @@
           <input placeholder="Family Name" class="form-control" type="text" />
           <form #f="ngForm" [formGroup]="phoneForm">
             <ngx-intl-tel-input
+            id="num"
+            class="form-control"
               [cssClass]="'custom'"
               [preferredCountries]="preferredCountries"
               [enableAutoCountrySelect]="true"

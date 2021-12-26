@@ -27,6 +27,31 @@ getBendingMaching():Observable<any>{
 }
 
 
+getServiceByCat():Observable<any>{
+  return this._HttpClient.get(environment.baseUrl+"services/serviceCategory/1")
+}
+
+// http://m3arees.in/api/
+
+
+ 
+
+getServiceDetailes(id:any):Observable<any>{
+  return this._HttpClient.get(environment.baseUrl+`Services/${id}?Lang=ar`)
+}
+
+getADS():Observable<any>{
+  return this._HttpClient.get(environment.baseUrl+`adsImages/countries/1`)
+}
+
+// getServiceDetailes(id:any):Observable<any>{
+//   return this._HttpClient.get(environment.baseUrl+`Services/${id}?Lang=ar`)
+// }
+
+// getServiceDetailes(id:any):Observable<any>{
+//   return this._HttpClient.get(environment.baseUrl+`Services/${id}?Lang=ar`)
+// }
+
 
   constructor(private _HttpClient:HttpClient) { }
 }

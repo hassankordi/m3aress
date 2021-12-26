@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-full',
@@ -7,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FullComponent implements OnInit {
 
-  constructor() { }
+  imgUrl:any = environment.imagesUrl;
+  constructor(private API:ApiService) {
+    this.API.getADS().subscribe((res)=>{
+      this.images = res.adsImages
+      console.log(res);
+    },(err)=>{console.log(err);
+    })
+   }
   images = [  
-    { img: "../../assets/5png/5e4d119238539.png" },  
-    { img: "../../assets/5png/5e4d119238539.png" },  
+    // { img: "../../assets/5png/5e4d119238539.png" },  
+    // { img: "../../assets/5png/5e4d119238539.png" },  
     // { img: "../assets/images/2.jpg" },  
     // { img: "../assets/images/3.jpg" },  
     // { img: "../assets/images/4.jpg" },  
@@ -20,6 +29,10 @@ export class FullComponent implements OnInit {
     // { img: "../assets/images/8.jpg" },  
     // { img: "../assets/images/9.jpg" },  
   ];  
+
+
+
+
   slideConfig = {  
     "slidesToShow": 1,  
     "slidesToScroll": 1,  

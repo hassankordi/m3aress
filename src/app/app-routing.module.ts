@@ -14,6 +14,7 @@ import { NominationComponent } from './nomination/nomination.component';
 import { PremiumComponent } from './premium/premium.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
+import { SearchComponent } from './search/search.component';
 import { ServiceComponent } from './service/service.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { VerifyNumsComponent } from './verify-nums/verify-nums.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path:"forgetPassword" , component:ForgetPasswordComponent} , 
   {path:"verify" , component:VerifyNumsComponent} , 
   {path:"newPassword" , component:NewPassComponent} , 
+  {path:"search" , component:SearchComponent} , 
 
   
   

@@ -24,7 +24,8 @@ export class NavComponent implements OnInit {
     if (window.location.href.includes('home')) {
       (
         document.getElementById('nav-container') as HTMLElement
-      ).style.backgroundColor = 'transparent';
+      ).style.backgroundColor = 'rgba(0,0,0,0.2)';
+      // transparent
       (
         document.getElementById('nav-container') as HTMLElement
       ).style.backgroundImage = 'none';

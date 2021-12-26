@@ -32,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxNavbarModule } from 'ngx-bootstrap-navbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMatIntlTelInputModule } from 'ngx-mat-intl-tel-input-angular-13';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { NgxMatIntlTelInputModule } from 'ngx-mat-intl-tel-input-angular-13';
     ForgetPasswordComponent,
     VerifyNumsComponent,
     NewPassComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
