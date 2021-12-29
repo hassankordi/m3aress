@@ -5,6 +5,15 @@
   font-family: "Josefin Sans", sans-serif;
   margin: 50px 0px;
 
+  .appInfo-row{
+    .col-md-6{
+      p{
+        direction: rtl;
+        font-weight: 500;
+      }
+    }
+  }
+
   .adv-item-con {
     // background-color: tomato;
     // text-align: center;

@@ -4,13 +4,14 @@
       <div class="col-md-4 register-img">
         <img src="../../assets/5png/Group 10089.png" alt="" />
         <p>Log Up</p>
-        <button class="btn">Log Up</button>
+        <button [disabled]='!userData.valid && !gender != null' (click)="sendData()" class="btn">Log Up</button>
       </div>
       <div class="col-md-6 register-inputs">
         <div>
-          <input placeholder="First Name" class="form-control" type="text" />
-          <input placeholder="Family Name" class="form-control" type="text" />
-          <form #f="ngForm" [formGroup]="phoneForm">
+          <form [formGroup]="userData" action="">
+            <input formControlName="firstName" placeholder="First Name" class="form-control" type="text" />
+            <input formControlName="lastName" placeholder="Family Name" class="form-control" type="text" />
+            <!-- <form #f="ngForm" [formGroup]="phoneForm">
             <ngx-intl-tel-input
             id="num"
             class="form-control"
@@ -33,18 +34,33 @@
               formControlName="phone"
             >
             </ngx-intl-tel-input>
+          </form> -->
+            <input formControlName="phone" placeholder="Phone" class="form-control" type="text" />
+            <input formControlName="countryCode" placeholder="Country Code" class="form-control" type="text" />
+            <input formControlName="password" placeholder="Password" class="form-control" type="password" />
+            <div *ngIf='
+            userData.controls.password.touched &&
+            userData.controls.password.invalid
+            ' class="alert alert-danger" role="alert">
+                <i> Must Complex Password Must Include A-a-@-1 And Minimum eight characters  </i>
+            </div>
+            <!--  -->
+            <input formControlName="confirmPassword" placeholder="Confirm Password" class="form-control"
+              type="password" />
+              <div *ngIf='
+              userData.controls.confirmPassword.touched &&
+              userData.controls.confirmPassword.invalid
+              ' class="alert alert-danger" role="alert">
+                  <i> Must Complex Password Must Include A-a-@-1 And Minimum eight characters  </i>
+              </div>
+              <!--  -->
+              <!-- formControlName="gender" -->
+              <select  (change)="onSelect()"  class="form-control" name="gender" id="gender">
+                <option class="d-none"  value="Gender">Gender</option>
+                <option  value="0">Male</option>
+                <option  value="1">Female</option>
+              </select>
           </form>
-          <input
-            placeholder="mobile (library here )"
-            class="form-control"
-            type="text"
-          />
-          <input placeholder="Password" class="form-control" type="password" />
-          <input
-            placeholder="Confirm Password"
-            class="form-control"
-            type="password"
-          />
           <!-- <b><p>Forget Password ?</p></b> -->
 
           <p>I Have An Account <span routerLink="/login">Log In</span></p>

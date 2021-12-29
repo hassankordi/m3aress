@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
     })
 
 
-    console.log(this.imgUrl);
+    // console.log(this.imgUrl);
     
    }
 

@@ -1,0 +1,35 @@
+<app-nav></app-nav>
+<section class="appearanceData-container">
+    <div class="container">
+        <h3>Your Appearance Data</h3>
+        <div class="appearance-box">
+            <div class="container">
+                <div class="row justify-content-center ">
+                    <div *ngFor="let item of data1" class="col-md-6 row">
+                        <div class="col-6">
+                           <p> {{item.properity}}</p>
+                        </div>
+                        <div class="col-6">
+                            <p *ngFor="let i of item.selectedText">{{i}}</p>
+                        </div>
+
+                    </div>
+                    <!-- <div class="col-md-6 row">
+                        <div class="col-6">
+                            name
+                        </div>
+                        <div class="col-6">
+                            val
+
+                        </div>
+
+                    </div> -->
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<app-send-us></app-send-us>

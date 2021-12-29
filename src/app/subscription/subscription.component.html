@@ -1,54 +1,45 @@
 <app-header></app-header>
 
 <section class="sub-container">
-    <div class="container">
+    <div class="container p-0">
         <h2>Subscriptions</h2>
         <ul class="sub-menu">
-            <li>Bouquets Plain</li>
+            <!-- <li>Bouquets Plain</li>
             <li>Bouquets Search</li>
-            <li>Bouquets Premium</li>
+            <li>Bouquets Premium</li> -->
+            <li (click)="getSub(li)" *ngFor="let li of lis">{{li.name}}</li>
         </ul>
 
         <div class="row myRow">
-            <div class="main-img col-12">
+            <div (click)="openModal(bigImage)" [ngStyle]="{ 'background-image': 'url(' + imgUrl+bigImage.image + ')'}"
+                class="main-img col-12">
                 <div class="layer">
                 </div>
                 <div class="sub-item">
 
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, iusto itaque placeat sequi
+                    <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, iusto itaque placeat sequi
                         rerum totam sed facere quas officiis, repudiandae dolore fuga. Quam minus excepturi dolore, nisi
                         officiis culpa rerum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias eos
                         eligendi, ipsa quam unde numquam velit distinctio iste repellat est deserunt, aperiam, tempora
-                        porro cupiditate sit asperiores ex? Dolore, ex.</p>
-                    <button class="btn" (click)="openModal()">Subscripe package</button>
-                 
+                        porro cupiditate sit asperiores ex? Dolore, ex.</p> -->
+                    <p>{{bigImage.name}}</p>
+                    <!-- <button class="btn" (click)="openModal(bigImage)">Subscripe package</button> -->
+
                 </div>
             </div>
-          <div id="myModal" class="myModal">
-            <div class="modalBox">
-                <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
-                <h3>الشروط و الاحكام</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam assumenda esse ab
-                    repudiandae rerum nihil consequuntur veritatis delectus minus molestias, iure provident
-                    culpa perferendis nostrum odio omnis maxime. Delectus, perspiciatis.</p>
-                    <label class="checkbox">
-                        اوافق علي الشروط و الاحكام 
-                        <input type="checkbox" value="accept" id="remember_me"> 
-                    </label>
-                    <button id="modalAcceptBtn" class="btn">Accept</button>
 
-            </div>
-          </div>
 
-            <div class="col-md-6">
-                <div class="left-item sub-item">
+            <div (click)="openModal(package)" *ngFor="let package of Data" class="col-md-6">
+                <div [ngStyle]="{ 'background-image': 'url(' + imgUrl+package.image + ')'}" class="left-item sub-item">
                     <div>
-                        <p>Package Of 50 Dinars</p>
-                        <span> 8 Nominations Are Nominated With Second Level Filtering Priority</span>
+                        <p>{{package.name}}</p>
+                        <span> {{package.identifier}}</span>
+                    </div>
+                    <div class="layer">
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <div class="right-item sub-item">
                     <div class="layer">
 
@@ -58,11 +49,40 @@
                         <span> 20 Nominations Are Nominated With First-Level Filtering Priority</span>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
 
     </div>
 </section>
+<div id="myModal" class="myModal">
+    <div class="modalBox">
+        <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
+        <p>{{modalData.desc}}</p>
 
+        <div class="modalBtns">
+            <button [disabled]="!isLogin" id="modalAcceptBtn" class="btn">Accept</button>
+            <button routerLink="/register"  [disabled]="isLogin" id="modalRegisterBtn" class="btn">Register</button>
+        </div>
+
+    </div>
+</div>
 <app-send-us></app-send-us>
+
+
+<!-- 
+<div id="myModal" class="myModal">
+    <div class="modalBox">
+        <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
+        <h3>الشروط و الاحكام</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam assumenda esse ab
+            repudiandae rerum nihil consequuntur veritatis delectus minus molestias, iure provident
+            culpa perferendis nostrum odio omnis maxime. Delectus, perspiciatis.</p>
+            <label class="checkbox">
+                اوافق علي الشروط و الاحكام 
+                <input type="checkbox" value="accept" id="remember_me"> 
+            </label>
+            <button id="modalAcceptBtn" class="btn">Accept</button>
+
+    </div>
+  </div> -->

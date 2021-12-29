@@ -4,7 +4,9 @@
 
         <img src="../../assets/5png/Group 10089.png" alt="">
         <h3>FORGET PASSWORD</h3>
-        <input placeholder="6 digits" class="form-control" type="text">
-        <button routerLink="/newPassword" class="btn">Verify</button>
+        <form [formGroup]="codeData" action="">
+            <input formControlName="code" placeholder="4 digits" class="form-control" type="text">
+        <button [disabled]="!codeData.valid" (click)="sendVerifyCode()" class="btn">Verify</button>
+        </form>
     </div>
 </section>

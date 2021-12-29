@@ -34,6 +34,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMatIntlTelInputModule } from 'ngx-mat-intl-tel-input-angular-13';
 import { SearchComponent } from './search/search.component';
 
+
+
+import { TabModule } from '@syncfusion/ej2-angular-navigations';
+import { AppearanceDataComponent } from './appearance-data/appearance-data.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +63,7 @@ import { SearchComponent } from './search/search.component';
     VerifyNumsComponent,
     NewPassComponent,
     SearchComponent,
+    AppearanceDataComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +76,9 @@ import { SearchComponent } from './search/search.component';
     NgxMatIntlTelInputModule,
     HttpClientModule,
     NgbModule,
+
+
+    TabModule
   ],
   providers: [],
   bootstrap: [AppComponent],

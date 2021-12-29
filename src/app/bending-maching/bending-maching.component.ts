@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
 @Component({
@@ -16,9 +17,21 @@ export class BendingMachingComponent implements OnInit {
   // machineStep: string = 'side-stepper-circle';
   // resourceStep: string = 'side-stepper-circle';
   // tapSidename: string = 'Set Time';
-  constructor(private API:ApiService) {
-   this.API.getBendingMaching().subscribe(
-     (res)=>{console.log(res);} ,(err)=>{console.log(err);
+ 
+ token:any = localStorage.getItem("userToken")
+  constructor(private API:ApiService , private route:Router) {
+   this.API.getBendingMaching(this.token).subscribe(
+     (res)=>{console.log(res);} ,(err)=>{
+       
+      console.log(err.error.messageError);
+      if (err.error.messageError == 90) {
+        alert("You Are Not In Pending Maching Now");
+        this.route.navigate(["/profile"])
+
+
+      }
+
+     
      })
   }
 

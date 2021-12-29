@@ -1,0 +1,63 @@
+
+.appearanceData-container{
+    font-family: "Josefin Sans", sans-serif;
+    margin: 50px 0px;
+    h3{
+        margin: 30px 0px ;
+    }
+    .appearance-box{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        background-color: hsl(0, 0%, 95%);
+        padding: 40px;
+        h4{
+            color: #F3C221;
+            font-weight: 600;
+        }
+
+        .container{
+            .row{
+                p{
+                    font-size: 20px;
+                    font-weight: 800;
+                }
+                button{
+                    background-image: linear-gradient(#fed94c,#F3C221);
+                    padding: 0px 25px;
+                    margin: 0;
+                }
+                .circle{
+                    background-color: #fed94c;
+                    width: 15px;
+                    height: 15px;
+                    position: relative;
+                    z-index: 1;
+                    left:calc( -28px);
+                    border-radius: 50%;
+
+                }
+                .line{
+                    width: 2px;
+                    height:calc(100% - 16px);
+                    background-color: hsl(0, 0%, 50%);
+                    margin: 0px 20px 0px 0px ;
+                }
+
+
+
+            }
+
+            .btns-con{
+                // background-color: tomato;
+                justify-content: space-around;
+                button{
+                    // margin: 50px;
+                    padding: 12px 40px;
+                    font-weight: 800;
+                    font-size: 20px;
+                    border-radius: 30px;
+                }
+            }
+        }
+
+    }
+}

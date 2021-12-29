@@ -42,14 +42,17 @@
                 </select> -->
                
              <div>
-                <input placeholder="First Name" class="form-control" type="text">
-                <input  placeholder="Family Name" class="form-control" type="text">
-                <input  placeholder="mobile (library here )" class="form-control" type="text">
-                <input  placeholder="Guardin's Name" class="form-control" type="password">
-                <input  placeholder="Guardin's mobile (library here )" class="form-control" type="password">
-                <input  placeholder="Password" class="form-control" type="password">
+               <form [formGroup]="userData" (ngSubmit)="sendData()" action="">
+                <input formControlName="FirstName" placeholder="First Name" class="form-control" type="text">
+                <input formControlName="FamilyName"  placeholder="Family Name" class="form-control" type="text">
+                <input formControlName="phone"  placeholder="Phone" class="form-control" type="text">
+                <input formControlName="countryCode"  placeholder="Country Code" class="form-control" type="text">
+                <input *ngIf="gender == 'false' " formControlName="guardianFemaleName"  placeholder="Guardin's Name" class="form-control" type="password">
+                <input *ngIf="gender == 'false' " formControlName="guardianFemalePhone"  placeholder="Guardin's mobile" class="form-control" type="password">
+                <input *ngIf="gender == 'false' " formControlName="guardianFemaleCountryCode"  placeholder="Guardin's Country Code" class="form-control" type="text">
                 
-                <button routerLink="/profile" class="btn com-btn">Completing</button>
+                <button [disabled]='!userData.valid' class="btn com-btn">Completing</button>
+               </form>
              </div>
             </div>
          

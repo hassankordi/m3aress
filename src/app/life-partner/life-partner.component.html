@@ -4,7 +4,7 @@
         <h3>
             Life Partner 
         </h3>
-        <div class="Apperance-box">
+        <!-- <div class="Apperance-box">
             <h3>Apperance</h3>
             <div class="w-100 row justify-content-center">
                 <select class="form-control" name="length" id="length">
@@ -46,9 +46,224 @@
             </div>
          
     
-        </div>
+        </div> -->
     
+        <div class="appearance-box">
+            <ejs-tab id="element">
+                <e-tabitems>
+                    <e-tabitem>
+                        <ng-template #headerText>
+                            <div class="myHeaderText">Appearance </div>
+                        </ng-template>
+                        <ng-template #content>
+
+
+                            <div class="w-100 row justify-content-center profile-inputs">
+
+                                <div>
+                                   <form [formGroup]="userApperanceData1" action="">
+                                    <select formControlName="length" class="form-control" name="length" id="length" ngModel>
+                                        <option value="" class="d-none">Length</option>
+                                        <option *ngFor="let len of apperanceLength.results" class="op" [ngValue]="len.id">{{len.text}}</option>
+                                       
+                                    </select>
+                                    <select formControlName="Weight" class="form-control" name="Weight" ngModel>
+                                        <option value="" class="d-none">Weight</option>
+                                        <option *ngFor="let wei of apperanceWeight.results" class="op" [ngValue]="wei.id">{{wei.text}}</option>
+                                       
+                                    </select>
+                                    <select formControlName="Appearances" class="form-control" name="Weight" ngModel>
+                                        <option value="" class="d-none">Appearances</option>
+                                        <option *ngFor="let app of apperanceAppearances.results" class="op" [ngValue]="app.id">{{app.text}}</option>
+                                       
+                                    </select>
+                                  
+                                    <select formControlName="BodyType" class="form-control" name="BodyType" id="BodyType" ngModel>
+                                        <option value="" class="d-none">Body Type</option>
+                                        <option *ngFor="let bt of apperanceBodyType.results" class="op" [ngValue]="bt.id">{{bt.text}}</option>
+                                       
+                                    </select>
+                                    <select formControlName="SkinColor" class="form-control" name="length" id="length" ngModel>
+                                        <option value="" class="d-none">Skin Color</option>
+                                        <option *ngFor="let sc of apperanceSkinColor.results" class="op" [ngValue]="sc.id">{{sc.text}}</option>
+                                       
+                                    </select>
+                                    <select formControlName="HairColor" class="form-control" name="length" id="length" ngModel>
+                                        <option value="" class="d-none">Hair Color</option>
+                                        <option *ngFor="let hc of apperanceHairColor.results" class="op" [ngValue]="hc.id">{{hc.text}}</option>
+                                       
+                                    </select>
+                                    <select formControlName="HairLength" class="form-control" name="length" id="length" ngModel>
+                                        <option value="" class="d-none">Hair Length</option>
+                                        <option *ngFor="let hl of apperanceHairLength.results" class="op" [ngValue]="hl.id">{{hl.text}}</option>
+                                       
+                                    </select>
+                                    <select formControlName="HairType" class="form-control" name="length" id="length" ngModel>
+                                        <option value="" class="d-none">Hair Type</option>
+                                        <option *ngFor="let ht of apperanceHairType.results" class="op" [ngValue]="ht.id">{{ht.text}}</option>
+                                       
+                                    </select>
+                                    <!-- <input placeholder="Weight" class="form-control" type="text">
+                                    <input placeholder="Appearance" class="form-control" type="text">
+                                    <input placeholder="Body Type" class="form-control" type="text">
+                                    <input placeholder="Skin Color" class="form-control" type="text">
+                                    <input placeholder="Hair Color" class="form-control" type="text">
+                                    <input placeholder="Hair Type" class="form-control" type="text">
+                                    <input placeholder="Hair Length" class="form-control" type="text"> -->
+                                   </form>
+                                    <!-- <button (click)="sendData()" class="btn com-btn">Completing</button> -->
+                                </div>
+                            </div>
+
+
+                        </ng-template>
+                    </e-tabitem>
+                    <e-tabitem>
+                        <ng-template #headerText>
+                            <div  class="myHeaderText"> Lifestyle </div>
+                        </ng-template>
+                        <ng-template #content>
+                            <div class="w-100 row justify-content-center profile-inputs">
+
+                                <div>
+                                    <form [formGroup]="userApperanceData2" action="">
+                                        <select formControlName="Age" class="form-control" name="length" id="length" ngModel>
+                                            <option value="" class="d-none">Age</option>
+                                            <option *ngFor="let age of lifeStyleAge.results" class="op" [ngValue]="age.id">{{age.text}}</option>
+                                        </select>
+                                        <select formControlName="SocialStatus" class="form-control" name="Weight" ngModel>
+                                            <option value="" class="d-none">Social Status</option>
+                                            <option *ngFor="let ss of lifeStyleSocialStatus.results" class="op" [ngValue]="ss.id">{{ss.text}}</option>
+                                           
+                                        </select>
+                                        <select formControlName="Occupation" class="form-control" name="Weight" ngModel>
+                                            <option value="" class="d-none">Occupation</option>
+                                            <option *ngFor="let occ of lifeStyleOccupation.results" class="op" [ngValue]="occ.id">{{occ.text}}</option>
+                                           
+                                        </select>
+                                      
+                                        <select formControlName="NumberofChildren" class="form-control" name="BodyType" id="BodyType" ngModel>
+                                            <option value="" class="d-none">Number of Children</option>
+                                            <option *ngFor="let bt of lifeStyleNumberofChildren.results" class="op" [ngValue]="bt.id">{{bt.text}}</option>
+                                           
+                                        </select>
+                                        <select formControlName="MoreBoys" class="form-control" name="length" id="length" ngModel>
+                                            <option value="" class="d-none">More Boys</option>
+                                            <option *ngFor="let sc of lifeStyleMoreBoys.results" class="op" [ngValue]="sc.id">{{sc.text}}</option>
+                                           
+                                        </select>
+                                        <select formControlName="MarriageType" class="form-control" name="length" id="length" ngModel>
+                                            <option value="" class="d-none">Marriage Type</option>
+                                            <option *ngFor="let hc of lifeStyleMarriageType.results" class="op" [ngValue]="hc.id">{{hc.text}}</option>
+                                           
+                                        </select>
+                                        <select formControlName="Smoke" class="form-control" name="length" id="length" ngModel>
+                                            <option value="" class="d-none">Smoke</option>
+                                            <option *ngFor="let hl of lifeStyleSmoke.results" class="op" [ngValue]="hl.id">{{hl.text}}</option>
+                                           
+                                        </select>
+                                        
+                                        <!-- <input placeholder="Weight" class="form-control" type="text">
+                                        <input placeholder="Appearance" class="form-control" type="text">
+                                        <input placeholder="Body Type" class="form-control" type="text">
+                                        <input placeholder="Skin Color" class="form-control" type="text">
+                                        <input placeholder="Hair Color" class="form-control" type="text">
+                                        <input placeholder="Hair Type" class="form-control" type="text">
+                                        <input placeholder="Hair Length" class="form-control" type="text"> -->
+                                       </form>
+                                    <!-- <button (click)="openModal()" class="btn com-btn">Completing</button> -->
+                                </div>
+                            </div>
+                        </ng-template>
+                    </e-tabitem>
+                    <e-tabitem>
+                        <ng-template #headerText>
+                            <div  class="myHeaderText"> Cultural Values</div>
+                        </ng-template>
+                        <ng-template #content>
+                            <div class="w-100 row justify-content-center profile-inputs">
+
+                                <div>
+                                    <form [formGroup]="userApperanceData3" action="">
+                                        <select formControlName="Nationality" class="form-control" name="length" id="length" ngModel>
+                                            <option value="" class="d-none">Nationality</option>
+                                            <option *ngFor="let age of Nationality.results" class="op" [ngValue]="age.id">{{age.text}}</option>
+                                        </select>
+                                        <select formControlName="EducationStage" class="form-control" name="Weight" ngModel>
+                                            <option value="" class="d-none">Education Stage</option>
+                                            <option *ngFor="let ss of EducationStage.results" class="op" [ngValue]="ss.id">{{ss.text}}</option>
+                                           
+                                        </select>
+                                        <select formControlName="MotherLanguage" class="form-control" name="Weight" ngModel>
+                                            <option value="" class="d-none">Mother Language</option>
+                                            <option *ngFor="let occ of MotherLanguage.results" class="op" [ngValue]="occ.id">{{occ.text}}</option>
+                                           
+                                        </select>
+                                      
+                                        <select formControlName="AnotherLanguages" class="form-control" name="BodyType" id="BodyType" ngModel>
+                                            <option value="" class="d-none">Another Languages</option>
+                                            <option *ngFor="let bt of AnotherLanguages.results" class="op" [ngValue]="bt.id">{{bt.text}}</option>
+                                           
+                                        </select>
+                                        <select formControlName="Religion" class="form-control" name="length" id="length" ngModel>
+                                            <option value="" class="d-none">Religion</option>
+                                            <option *ngFor="let sc of Religion.results" class="op" [ngValue]="sc.id">{{sc.text}}</option>
+                                           
+                                        </select>
+                                        <select formControlName="ReligionValue" class="form-control" name="length" id="length" ngModel>
+                                            <option value="" class="d-none">Religion Value</option>
+                                            <option *ngFor="let hc of ReligionValue.results" class="op" [ngValue]="hc.id">{{hc.text}}</option>
+                                           
+                                        </select>
+                                        
+                                        
+                                     
+                                       </form>
+                                    
+                                </div>
+                            </div>
+                        </ng-template>
+                    </e-tabitem>
+                </e-tabitems>
+            </ejs-tab>
+            <button [disabled]=" !userApperanceData1.valid || !userApperanceData2.valid || !userApperanceData3.valid"
+             (click)="sendData()"  class="btn com-btn">Completing</button>
+
+
+
+
+
+        </div>
     </div>
   
 </section>
+<div id="myModal" class="myModal">
+    <div class="modalBox">
+        <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
+        <h3> <i class="fas fa-check"></i> </h3>
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div class="info-con">
+                    <p>تهانينا</p>
+                </div>
+
+            </div>
+            <div class="col-12 mt-5">
+                <div class="info-con">
+                    <span>لقد اكملت من بيانات الملف الشخصي</span>
+                </div>
+
+
+            </div>
+            <div class="col-12 mt-5">
+                <div class="info-con">
+                    <p>100%</p>
+                </div>
+
+            </div>
+        </div>
+        <!-- <button id="modalAcceptBtn" class="btn">Accept</button> -->
+
+    </div>
+</div>
 <app-send-us></app-send-us>

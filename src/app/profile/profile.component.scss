@@ -1,49 +1,52 @@
-.profile-container{
+
+
+
+.profile-container {
     // text-align: center;
+    overflow: hidden;
+    width: 100%;
     font-family: "Josefin Sans", sans-serif;
-    .user-info{
-        p{
+    .user-info {
+        p {
             font-size: 25px;
             font-weight: 700;
         }
     }
-    .user-btns{
-
-        div{
+    .user-btns {
+        div {
             display: flex;
             flex-direction: column-reverse;
             align-items: center;
-            button{
-                background-image: linear-gradient(#FED94C ,#F3C221);
+            button {
+                background-image: linear-gradient(#fed94c, #f3c221);
                 margin: 10px 0px;
                 border-radius: 30px;
                 width: 50%;
-
             }
         }
     }
-    .boq-span{
-        color: #F3C221;
+    .boq-span {
+        color: #f3c221;
         font-weight: 800;
         font-size: 25px;
-       margin-bottom: 50px;
+        margin-bottom: 50px;
     }
-    .Bouquest-container{
+    .Bouquest-container {
         margin-top: 30px;
-        p{
+        p {
             text-align: start;
             font-size: 22px;
             font-weight: 700;
         }
-        span{
+        span {
             margin-left: 30px;
         }
     }
-    .btns-con{
+    .btns-con {
         margin: 50px 0px;
-        button{
+        button {
             padding: 12px 40px;
-            
+
             font-weight: 800;
             font-size: 25px;
         }
@@ -54,57 +57,81 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        // margin: 30px 0px;
-        padding: 30px 0px;
-        h3 {
-            display: inline-block;
-            text-align: center;
-        }
-      .profile-inputs {
-        // background-color: teal;
-        display: flex;
-        align-items: center;
+        margin: 30px 0px;
+        padding: 30px 50px;
+      
         
-        div {
-            width: 100%;
-            input {
-                border: none;
-                border-bottom: 2px #fed94c solid;
-                margin: 50px 0px;
-                &::placeholder {
-                    font-weight: 800;
-                    padding: 30px 50px;
-                    font-size: 25px;
-                    background-color: hsl(0, 0%, 98%);
-                }
-            }
-            b{
-               p{
-                text-align: end;
-                // background-color: #fed94c;
-               }
-            }
-            p{
-                text-align: center;
-                margin: 30px;
-                span{
-                    color: #fed94c;
-                    font-weight: 800;
-                    cursor: pointer;
-                }
-            }
+       
+        .myHeaderText {
+            font-size: 18px;
+           
         }
      
-    }
-        .com-btn{
-            background-image: linear-gradient(#FED94C ,#F3C221);
+        .e-active .e-tab-text{
+            color: #fed94c !important;
+        }
+        .e-indicator {
+            background-color: #f3c221 !important;
+        }
+       
+        .form-control{
+            padding: 0 !important;
+            // background-color: teal !important;
+        }
+
+        .profile-inputs {
+            // background-color: teal;
+            display: flex;
+            align-items: center;
+
+            background-color: hsl(0, 0%, 98%);
+            div {
+                width: 100%;
+                background-color: hsl(0, 0%, 98%);
+                input , select , option {
+                    border: none;
+                    border-bottom: 2px #fed94c solid;
+                    margin: 50px 0px;
+                    padding:30px 50px ;
+                    background-color: hsl(0, 0%, 98%);
+
+                    font-weight: 600;
+                    padding: 30px 50px;
+                    font-size: 18px;
+                   
+                    &::placeholder {
+                        font-weight: 600;
+                        padding: 30px 50px;
+                        font-size: 18px;
+                        background-color: hsl(0, 0%, 98%);
+                    }
+                }
+                b {
+                    p {
+                        text-align: end;
+                        // background-color: #fed94c;
+                    }
+                }
+                p {
+                    text-align: center;
+                    margin: 30px;
+                    span {
+                        color: #fed94c;
+                        font-weight: 800;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .com-btn {
+            background-image: linear-gradient(#fed94c, #f3c221);
             padding: 12px 40px;
             font-weight: 700;
-            width: 25%;
+            // width: 25%;
             border-radius: 30px;
         }
-        
-        .op{
+
+        .op {
             padding: 20px;
             font-weight: 700;
             font-size: 20px;
@@ -112,7 +139,6 @@
         }
     }
 }
-
 
 .myModal {
     position: fixed;
@@ -140,19 +166,18 @@
         left: 50%;
         transform: translateX(-50%);
         padding: 50px;
-        h3{
+        h3 {
             font-size: 35px;
             color: #fed94c;
-            
-            .fa-check{
-                padding: 20px ;
-            border-radius: 50%;
-            background-color: #efefef;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+            .fa-check {
+                padding: 20px;
+                border-radius: 50%;
+                background-color: #efefef;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             }
         }
-       
+
         #closeModal {
             position: absolute;
             right: 15px;
@@ -160,25 +185,23 @@
             color: #fed94c;
             cursor: pointer;
         }
-        .info-con{
+        .info-con {
             display: flex;
             justify-content: center;
             font-family: "Josefin Sans", sans-serif;
-            span{
+            span {
                 font-size: 22px;
                 font-weight: 400;
-
             }
-            p{
+            p {
                 font-weight: bold;
                 font-size: 30px;
             }
         }
-      
-       .checkbox{
-        font-size: 20px;
-        font-weight: 500;
-       }
 
+        .checkbox {
+            font-size: 20px;
+            font-weight: 500;
+        }
     }
 }

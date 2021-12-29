@@ -10,9 +10,16 @@ import { ApiService } from '../api.service';
 export class FullComponent implements OnInit {
 
   imgUrl:any = environment.imagesUrl;
+  appInfo:any = {}
   constructor(private API:ApiService) {
     this.API.getADS().subscribe((res)=>{
       this.images = res.adsImages
+      console.log(res);
+    },(err)=>{console.log(err);
+    })
+    this.API.getApplicationInfo().subscribe((res)=>{
+      // this.images = res.adsImages
+      this.appInfo = res 
       console.log(res);
     },(err)=>{console.log(err);
     })

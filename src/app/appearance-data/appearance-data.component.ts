@@ -2,16 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { AuthorizationService } from '../authorization.service';
-import { TabComponent } from '@syncfusion/ej2-angular-navigations';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  selector: 'app-appearance-data',
+  templateUrl: './appearance-data.component.html',
+  styleUrls: ['./appearance-data.component.scss']
 })
-export class ProfileComponent implements OnInit {
-
+export class AppearanceDataComponent implements OnInit {
+  
   token: any = ""
   apperanceLength: any = [];
   apperanceWeight: any = [];
@@ -40,92 +38,26 @@ export class ProfileComponent implements OnInit {
   ReligionValue: any = [];
 
 
+data1:any=[]
 
 
 
-  data: any = {}
-  isLogin = this.AuthAPI.isLogin.getValue()
-
-
-  userApperanceData1 = new FormGroup({
-    length: new FormControl("", [Validators.required]),
-    Weight: new FormControl("", [Validators.required]),
-    Appearances: new FormControl("", [Validators.required]),
-    BodyType: new FormControl("", [Validators.required]),
-    SkinColor: new FormControl("", [Validators.required]),
-    HairColor: new FormControl("", [Validators.required]),
-    HairLength: new FormControl("", [Validators.required]),
-    HairType: new FormControl("", [Validators.required]),
-
-  })
-
-  userApperanceData2 = new FormGroup({
-    Age: new FormControl("", [Validators.required]),
-    SocialStatus: new FormControl("", [Validators.required]),
-    Occupation: new FormControl("", [Validators.required]),
-    NumberofChildren: new FormControl("", [Validators.required]),
-    MoreBoys: new FormControl("", [Validators.required]),
-    MarriageType: new FormControl("", [Validators.required]),
-    Smoke: new FormControl("", [Validators.required]),
-
-  })
-  userApperanceData3 = new FormGroup({
-    Nationality: new FormControl("", [Validators.required]),
-    EducationStage: new FormControl("", [Validators.required]),
-    MotherLanguage: new FormControl("", [Validators.required]),
-    AnotherLanguages: new FormControl("", [Validators.required]),
-    Religion: new FormControl("", [Validators.required]),
-    ReligionValue: new FormControl("", [Validators.required]),
-
-
-  })
-
-  sendData() {
-    console.log(this.userApperanceData1.value);
-    this.AuthAPI.addUserAppearance(this.userApperanceData1.value,
-      this.userApperanceData2.value,
-      this.userApperanceData3.value, this.token).subscribe((res) => {
-        console.log(res);
-        this.openModal()
-      }, (err) => {
-        console.log(err.error.messageError);
-        if (err.error.messageError == 84) {
-          // put
-          this.AuthAPI.putUserAppearance(this.userApperanceData1.value,
-            this.userApperanceData2.value,
-            this.userApperanceData3.value, this.token).subscribe((res) => {
-              console.log(res);
-              this.openModal()
-
-              // alert("updated success")
-            }, (err) => {
-              console.log(err);
-            })
-        }
-      })
-
-  }
   constructor(private API: ApiService, private AuthAPI: AuthorizationService, private router: Router) {
 
     const token = localStorage.getItem("userToken")
     this.token = token
-    if (this.isLogin) {
+   
 
-      this.AuthAPI.getProfile(token).subscribe((res) => {
-        console.log(res);
-        this.data = res
-
-      }, (err) => {
-        console.log(err);
-      })
-
+      
 
       this.API.getApperance1(token).subscribe((res) => {
         console.log(res.results);
+        this.data1 = res.results;
+
         res.results.forEach((element: any) => {
           if (element.properity == "Length") {
             this.apperanceLength = element
-            console.log("my length" , this.apperanceLength);
+            // console.log("my length" , this.apperanceLength);
           }
           if (element.properity == "Weight") {
             this.apperanceWeight = element
@@ -209,27 +141,27 @@ export class ProfileComponent implements OnInit {
         res.results.forEach((element: any) => {
           if (element.properity == "Nationality") {
             this.Nationality = element
-            console.log("my Nationality", this.Nationality);
+            // console.log("my Nationality", this.Nationality);
           }
           if (element.properity == "Education Stage") {
             this.EducationStage = element
-            console.log("my EducationStage", this.EducationStage);
+            // console.log("my EducationStage", this.EducationStage);
           }
           if (element.properity == "Mother Language") {
             this.MotherLanguage = element
-            console.log("my MotherLanguage", this.MotherLanguage);
+            // console.log("my MotherLanguage", this.MotherLanguage);
           }
           if (element.properity == "Another Languages") {
             this.AnotherLanguages = element
-            console.log("my AnotherLanguages", this.AnotherLanguages);
+            // console.log("my AnotherLanguages", this.AnotherLanguages);
           }
           if (element.properity == "Religion") {
             this.Religion = element
-            console.log("my Religion", this.Religion);
+            // console.log("my Religion", this.Religion);
           }
           if (element.properity == "Religion Value") {
             this.ReligionValue = element
-            console.log("my Religion Value", this.ReligionValue);
+            // console.log("my Religion Value", this.ReligionValue);
           }
 
 
@@ -244,25 +176,9 @@ export class ProfileComponent implements OnInit {
       // console.log(this.apperanceLength.selectedText[0]);
       
 
-    }
-    else {
-      alert("من فضلك سجل الدخول اولا")
-      this.router.navigate(["/login"])
+    
+   
 
-    }
-
-  }
-
-
-  closeModal() {
-    // myModal
-    (document.getElementById("myModal") as HTMLElement).style.display = "none";
-    // alert("closse");
-  }
-  openModal() {
-    // alert("open");
-
-    (document.getElementById("myModal") as HTMLElement).style.display = "block";
   }
 
   ngOnInit(): void {

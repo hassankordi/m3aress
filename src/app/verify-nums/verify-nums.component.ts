@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
+import { AuthorizationService } from '../authorization.service';
 
 @Component({
   selector: 'app-verify-nums',
@@ -7,7 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerifyNumsComponent implements OnInit {
 
-  constructor() { }
+  phone:any = "";
+  counrtyCode:any = "";
+
+  codeData = new FormGroup({
+    Phone: new FormControl(`${this.phone}`, []),
+    countryCode: new FormControl(`${this.counrtyCode}`, []),
+    code: new FormControl("", [Validators.required]),
+  })
+
+  sendVerifyCode(){
+    console.log(this.codeData);
+    this.AuthAPI.sendCodeToRestesPass(this.codeData.value).subscribe((res)=>{
+      console.log(res);
+      
+      this.router.navigate(["/newPassword"])
+    } , (err)=>{console.log(err);
+    })
+
+    
+  }
+
+  constructor(private API: ApiService, private AuthAPI: AuthorizationService ,private router:Router) { 
+   this.phone= localStorage.getItem("Phone")
+   this.counrtyCode= localStorage.getItem("CounrtyCode")
+  }
+
 
   ngOnInit(): void {
   }

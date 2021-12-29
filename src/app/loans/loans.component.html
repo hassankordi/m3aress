@@ -1,4 +1,4 @@
-<nav class="nav-container">
+<!-- <nav class="nav-container">
     <div class="row">
         <div class="col-2">
             <div class="brand-image">
@@ -33,30 +33,28 @@
         </div>
 
     </div>
-</nav>
+</nav> -->
 
+<app-nav></app-nav>
 <section class="loans-container">
   <div class="container">
     <h3>Loans And Facilities </h3>
     <!-- <div class="container"> -->
-    <img src="../../assets/5png/Group 10415.png" alt="">
+        <!-- [src]="imgUrl+img.image" -->
+    <img [src]="imgUrl+appInfo.loanAndConditionBankImage" alt="">
 
-    <h3>AL AHLI BANK OF KUWAIT</h3>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam deserunt sunt minus voluptatibus et debitis
-        veniam eligendi quod, inventore architecto, dolorum quam autem dolorem adipisci. Recusandae eius accusantium
-        eligendi quas. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad tempore at reprehenderit, corrupti,
-        neque magni, odio voluptatibus minus soluta nulla aliquam autem architecto. Consequatur sit quia dolorem magnam,
-        assumenda excepturi.</p>
+    <h3>{{appInfo.loanAndConditionBankName}}</h3>
+    <p>{{appInfo.loanAndFacilities}}</p>
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-sm-6">
                 <i class="fas fa-phone-alt"></i>
-                <span>123456</span>
+                <span>{{appInfo.loanAndConditionBankNumber}}</span>
 
             </div>
-            <div class="col-6">
+            <div class="col-sm-6">
                 <i class="fas fa-envelope"></i>
-                <span>http://ana@gmail.com</span>
+                <span>{{appInfo.loanAndConditionEmail}}</span>
             </div>
         </div>
   </div>

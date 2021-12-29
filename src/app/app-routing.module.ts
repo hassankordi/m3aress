@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppearanceDataComponent } from './appearance-data/appearance-data.component';
 import { BendingMachingComponent } from './bending-maching/bending-maching.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path:"life-partner" , component:LifePartnerComponent} , 
   {path:"editProfile" , component:EditProfileComponent} , 
   {path:"profile" , component:ProfileComponent} , 
+  {path:"appearanceData" , component:AppearanceDataComponent} , 
   {path:"bending-maching" , component:BendingMachingComponent} , 
   {path:"forgetPassword" , component:ForgetPasswordComponent} , 
   {path:"verify" , component:VerifyNumsComponent} , 

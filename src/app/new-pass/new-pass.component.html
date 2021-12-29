@@ -4,8 +4,10 @@
 
         <img src="../../assets/5png/Group 10089.png" alt="">
         <h3>NEW PASSWORD</h3>
-        <input placeholder="NEW PASSWORD" class="form-control" type="text">
-        <input placeholder="CONFIRM NEW PASSWORD" class="form-control" type="text">
-        <button routerLink="/profile" class="btn">Save</button>
+     <form [formGroup]="passData" action="">
+        <input formControlName="newPassword" placeholder="NEW PASSWORD" class="form-control" type="text">
+        <input formControlName="confirmPassword" placeholder="CONFIRM NEW PASSWORD" class="form-control" type="text">
+        <button (click)="sendNewPass()" [disabled]="!passData.valid" class="btn">Save</button>
+     </form>
     </div>
 </section>

@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -8,6 +8,25 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiService {
 
+
+
+
+  
+getApplicationInfo():Observable<any>{
+  return this._HttpClient.get(environment.baseUrl+"applicationInfos")
+}
+getApperance1(token):Observable<any>{
+  let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
+  return this._HttpClient.get(environment.baseUrl+"apperanceDataApi?lang=en&isMyData=false&page=1",{headers:headers_object})
+}
+getApperance2(token):Observable<any>{
+  let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
+  return this._HttpClient.get(environment.baseUrl+"apperanceDataApi?lang=en&isMyData=false&page=2",{headers:headers_object})
+}
+getApperance3(token):Observable<any>{
+  let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
+  return this._HttpClient.get(environment.baseUrl+"apperanceDataApi?lang=en&isMyData=false&page=3",{headers:headers_object})
+}
 
 sendMessage(data:any):Observable<any>{
   const message = JSON.stringify(data.message)
@@ -22,8 +41,9 @@ getMatiralAdvice():Observable<any>{
 }
 
 
-getBendingMaching():Observable<any>{
-  return this._HttpClient.get(environment.baseUrl+"pendingMatching")
+getBendingMaching(token):Observable<any>{
+  let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
+  return this._HttpClient.get(environment.baseUrl+"pendingMatching" ,{headers:headers_object})
 }
 
 
@@ -32,9 +52,9 @@ getServiceByCat():Observable<any>{
 }
 
 // http://m3arees.in/api/
+// 
 
 
- 
 
 getServiceDetailes(id:any):Observable<any>{
   return this._HttpClient.get(environment.baseUrl+`Services/${id}?Lang=ar`)
@@ -44,12 +64,18 @@ getADS():Observable<any>{
   return this._HttpClient.get(environment.baseUrl+`adsImages/countries/1`)
 }
 
-// getServiceDetailes(id:any):Observable<any>{
-//   return this._HttpClient.get(environment.baseUrl+`Services/${id}?Lang=ar`)
-// }
+getSubscripstions():Observable<any>{
+  return this._HttpClient.get(environment.baseUrl+`packages?lang=en`)
+}
+getSubscripstionsData(id):Observable<any>{
+  return this._HttpClient.get(environment.baseUrl+`packages/${id}/subPackages`)
+}
+getSubscripstionsDataDetailes(id):Observable<any>{
+  return this._HttpClient.get(environment.baseUrl+`subPackages/${id}?lang=en`)
+}
 
-// getServiceDetailes(id:any):Observable<any>{
-//   return this._HttpClient.get(environment.baseUrl+`Services/${id}?Lang=ar`)
+// getBendingMaching(id:any):Observable<any>{
+//   return this._HttpClient.get(environment.baseUrl+`pendingMatching`)
 // }
 
 

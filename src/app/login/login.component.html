@@ -4,13 +4,16 @@
         <div class="col-md-4 login-img">
             <img src="../../assets/5png/Group 10089.png" alt="">
             <p>Log In</p>
-            <button class="btn">Login</button>
+            <button [disabled]='!userData.valid'(click)="sendData()" class="btn">Login</button>
         </div>
         <div class="col-md-6 login-inputs">
           <div>
-            <input placeholder="First Name" class="form-control" type="text">
-            <input  placeholder="Password" class="form-control" type="text">
-            <b routerLink="/forgetPassword"><p>Forget Password ?</p></b>
+           <form [formGroup]="userData" action="">
+            <input formControlName="PHONE" placeholder="Phone Number" class="form-control" type="text">
+            <input formControlName="COUNTRYCODE" placeholder="Country Code" class="form-control" type="text">
+            <input formControlName="PASSWORD" placeholder="Password" class="form-control" type="password">
+           </form>
+            <b style="cursor: pointer;" routerLink="/forgetPassword"><p>Forget Password ?</p></b>
      
             <p>I Have An Account <span routerLink="/register">Log Up</span></p>
           </div>
