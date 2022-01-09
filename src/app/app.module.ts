@@ -38,6 +38,8 @@ import { SearchComponent } from './search/search.component';
 
 import { TabModule } from '@syncfusion/ej2-angular-navigations';
 import { AppearanceDataComponent } from './appearance-data/appearance-data.component';
+import { MaritalDetailesComponent } from './marital-detailes/marital-detailes.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { AppearanceDataComponent } from './appearance-data/appearance-data.compo
     NewPassComponent,
     SearchComponent,
     AppearanceDataComponent,
+    MaritalDetailesComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

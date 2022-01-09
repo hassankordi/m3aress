@@ -39,16 +39,20 @@
 <section class="my-5">
  <div class="container text-center">
     <h2>Service</h2>
-    <div class="row">
-        <div (mouseenter)="openSer(item)" *ngFor="let item of service" class="service-item col-md-3 col-6">
+    <!-- col-lg-3 adv-item-con col-sm-6 col-12 -->
+    <div class="row justify-content-center">
+        <div (mouseenter)="openSer(item)" *ngFor="let item of service" class="service-item col-lg-3 col-sm-6 col-12">
             
             <img [src]="imgUrl + item.image" alt="">
             <div id="layer" class="layer">
                 <h4>{{serviceDetailes.companyName}}</h4>
-                <p><span><i class="fas fa-phone-alt"></i></span> <span>{{serviceDetailes.phone}}</span></p>
-                <p><span><i class="fab fa-whatsapp"></i></span> <span>{{serviceDetailes.whatsAppNumber}}</span></p>
-                <p><span><i class="fas fa-envelope"></i></span> <span>{{serviceDetailes.email}}</span></p>
-                <p><span><i class="fas fa-map-marker-alt"></i></span> <span>{{serviceDetailes.address}}</span></p>
+                <p><span><i class="fas fa-phone-alt"></i></span> <span><a href="tel:serviceDetailes.phone">{{serviceDetailes.phone}}</a></span></p>
+                <p><span><i class="fab fa-whatsapp"></i></span> <span> <a target="blank" href="https://api.whatsapp.com/send?phone=serviceDetailes.whatsAppNumber"> {{serviceDetailes.whatsAppNumber}}</a></span></p>
+                <p><span><i class="fas fa-envelope"></i></span>  <span><a href = "mailto:{{serviceDetailes.email}}">{{serviceDetailes.email}}</a></span>
+                </p>
+                <!-- <span><a href = "mailto:{{appInfo.loanAndConditionEmail}}">{{appInfo.loanAndConditionEmail}}</a></span> -->
+                
+                <p><span><i class="fas fa-map-marker-alt"></i></span> <span><a href="#">{{serviceDetailes.address}}</a></span></p>
             </div>
 
         </div>

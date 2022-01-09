@@ -12,7 +12,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
 
-  token: any = ""
+  inPending:boolean = false;
+  token: any = localStorage.getItem("userToken");
   apperanceLength: any = [];
   apperanceWeight: any = [];
   apperanceAppearances: any = [];
@@ -44,6 +45,7 @@ export class ProfileComponent implements OnInit {
 
 
   data: any = {}
+  recomendationData: any = {}
   isLogin = this.AuthAPI.isLogin.getValue()
 
 
@@ -251,6 +253,16 @@ export class ProfileComponent implements OnInit {
 
     }
 
+
+    this.AuthAPI.isUserFillData(this.token).subscribe((res)=>{
+      if(res.isHavePendingMatching){
+        this.inPending = res.isHavePendingMatching
+      }
+      console.log(res);
+    } , (err)=>{console.log(err);
+    })
+
+
   }
 
 
@@ -265,6 +277,77 @@ export class ProfileComponent implements OnInit {
     (document.getElementById("myModal") as HTMLElement).style.display = "block";
   }
 
+
+  closeModal1() {
+    // myModal
+    (document.getElementById("myModal1") as HTMLElement).style.display = "none";
+    // alert("closse");
+  }
+  openModal1() {
+    // gender
+
+    if(this.data.gender == true){
+      alert(this.data.gender)
+      this.API.systemRecomendations(this.token , 1).subscribe((res)=>{
+        console.log(res);
+        this.recomendationData = res.results ;
+        (document.getElementById("myModal1") as HTMLElement).style.display = "block";
+      } , (err)=>{
+        if(err.error.messageError ==95){
+          alert("ليس لديك ترشيحات لانك بالفعل قبلت مستخدم من الترشيحات")
+        }
+       else if(err.error.messageError ==92){
+          alert("you are in pending maching now")
+        }
+       else if(err.error.messageError ==80){
+          alert("please check if you completed your data")
+        }
+        else if(err.error.messageError ==96){
+          alert("you don't have system recommendation now ")
+        }
+        console.log(err);
+      });
+
+    }else{
+      // alert(this.data.gender)
+      this.API.systemRecomendations(this.token , 0).subscribe((res)=>{console.log(res);
+      } , (err)=>{
+        // alert(err.error.messageError)
+        if(err.error.messageError == 95){
+          alert("ليس لديك ترشيحات لانك بالفعل قبلت مستخدم من الترشيحات")
+        }
+        else if(err.error.messageError == 92){
+          alert("you are in pending maching now")
+        }
+        else if(err.error.messageError ==80){
+          alert("please check if you completed your data")
+        }
+        else if(err.error.messageError ==96){
+          alert("you don't have system recommendation now ")
+        }
+        // console.log(err);
+      });
+    }
+    
+
+    
+  }
+
+
+  acceptRecommendation(num){
+    this.API.acceptSearch(this.token , this.recomendationData , num).subscribe((res)=>{
+      console.log(res);
+      
+      if(res.messageSuccess==1){
+        alert("تم");
+        this.closeModal1()
+
+      }
+    } , (err)=>{
+     
+      console.log(err);
+    })
+  }
   ngOnInit(): void {
   }
 

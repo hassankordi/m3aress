@@ -9,21 +9,24 @@ import { ApiService } from '../api.service';
 })
 export class MaritalAdviceComponent implements OnInit {
 
+  data: any = []
+  imgUrl: any = environment.imagesUrl;
 
-  data:any=[]
-
-  imgUrl:any = environment.imagesUrl;
-
-  constructor(private API:ApiService) { 
-    this.API.getMatiralAdvice().subscribe((res)=>{
+  constructor(private API: ApiService) {
+    this.API.getMatiralAdvice().subscribe((res) => {
       console.log(res);
-      this.data = res 
-      
-    },(err)=>{console.log(err);
+      this.data = res
+    }, (err) => {
+      console.log(err);
     })
   }
 
   ngOnInit(): void {
   }
+
+ 
+ 
+  
+ 
 
 }

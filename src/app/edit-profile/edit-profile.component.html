@@ -1,7 +1,11 @@
 <app-nav></app-nav>
 <section class="editProfile-container">
     <div class="container">
-        <h3>Edit Profile</h3>
+       <div class="row title-con">
+        <h3><span>Edit Profile</span> <button routerLink="/change-password" class="btn">Change Password</button></h3>
+       <!-- <span> </span> -->
+       </div>
+        
         <div class="editProfile-box">
            
             <div class="w-100 row justify-content-center edit-inputs">
@@ -47,9 +51,9 @@
                 <input formControlName="FamilyName"  placeholder="Family Name" class="form-control" type="text">
                 <input formControlName="phone"  placeholder="Phone" class="form-control" type="text">
                 <input formControlName="countryCode"  placeholder="Country Code" class="form-control" type="text">
-                <input *ngIf="gender == 'false' " formControlName="guardianFemaleName"  placeholder="Guardin's Name" class="form-control" type="password">
-                <input *ngIf="gender == 'false' " formControlName="guardianFemalePhone"  placeholder="Guardin's mobile" class="form-control" type="password">
-                <input *ngIf="gender == 'false' " formControlName="guardianFemaleCountryCode"  placeholder="Guardin's Country Code" class="form-control" type="text">
+                <input *ngIf="gender == 'true' " formControlName="guardianFemaleName"  placeholder="Guardin's Name" class="form-control" type="text">
+                <input *ngIf="gender == 'true' " formControlName="guardianFemalePhone"  placeholder="Guardin's mobile" class="form-control" type="text">
+                <input *ngIf="gender == 'true' " formControlName="guardianFemaleCountryCode"  placeholder="Guardin's Country Code" class="form-control" type="text">
                 
                 <button [disabled]='!userData.valid' class="btn com-btn">Completing</button>
                </form>

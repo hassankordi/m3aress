@@ -49,12 +49,13 @@
         <div class="row">
             <div class="col-sm-6">
                 <i class="fas fa-phone-alt"></i>
-                <span>{{appInfo.loanAndConditionBankNumber}}</span>
+                <span><a style="text-decoration: none;" href="tel:{{appInfo.loanAndConditionBankNumber}}">{{appInfo.loanAndConditionBankNumber}}</a></span>
 
             </div>
             <div class="col-sm-6">
                 <i class="fas fa-envelope"></i>
-                <span>{{appInfo.loanAndConditionEmail}}</span>
+                <span><a href = "mailto:{{appInfo.loanAndConditionEmail}}">{{appInfo.loanAndConditionEmail}}</a></span>
+                
             </div>
         </div>
   </div>

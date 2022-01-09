@@ -11,8 +11,8 @@ import { AuthorizationService } from '../authorization.service';
 })
 export class VerifyNumsComponent implements OnInit {
 
-  phone:any = "";
-  counrtyCode:any = "";
+  phone:any = localStorage.getItem("Phone");
+  counrtyCode:any = localStorage.getItem("CountryCode");
 
   codeData = new FormGroup({
     Phone: new FormControl(`${this.phone}`, []),
@@ -21,12 +21,16 @@ export class VerifyNumsComponent implements OnInit {
   })
 
   sendVerifyCode(){
+    console.log(this.counrtyCode);
+    
     console.log(this.codeData);
     this.AuthAPI.sendCodeToRestesPass(this.codeData.value).subscribe((res)=>{
       console.log(res);
       
       this.router.navigate(["/newPassword"])
-    } , (err)=>{console.log(err);
+    } , (err)=>{
+      alert("حدث خطأ حاول مرة اخرى")
+      console.log(err);
     })
 
     

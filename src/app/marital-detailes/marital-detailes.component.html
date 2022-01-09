@@ -1,0 +1,34 @@
+<app-nav></app-nav>
+<section class="maritalDetailes-container">
+    <h3>{{data.title}}</h3>
+  
+    <div class="row justify-content-center mt-5">
+      <div
+        *ngFor="let item of images"
+        class="col-lg-3 adv-item-con col-sm-6 col-12"
+      >
+    
+        <div (click)="sendData(item)" class="Adv-item">
+       
+          <img [src]="imgUrl + item" alt="" />
+        
+        </div>
+      </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-sm-5 m-5 d-flex align-items-center justify-content-around">
+        
+
+            <a href="{{data.videos[0]}}" target="_blank"><i class="fab fa-youtube"></i></a>
+
+
+
+            <a href="{{imgUrl}}{{data.file}}" download rel="noopener noreferrer"
+            target="_blank" class="btn pdf-btn" id="link"> File <i class="fas fa-file-download"></i> </a> 
+
+        </div>
+      
+      </div>
+</section>
+<app-send-us></app-send-us>

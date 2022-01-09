@@ -39,75 +39,79 @@
 <section class="premium-container my-5">
     <h2>Premium Filter</h2>
 
-    <div class="semi-nav">
-        <img src="../../assets/5png/crowns.png" alt="">
-        <span>Distinguished Candidates Category 100</span>
-    </div>
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-3 col-12">
-                <div (click)="openModal()" class="premium-item">
-                    <span class="per">95%</span>
-                    <span class="appro">appropriate</span>
-                    <p>Hassan Kordi</p>
-                </div>
-
-            </div>
-            <div class="col-lg-3 col-12">
-                <div (click)="openModal()" class="premium-item">
-                    <span class="per">95%</span>
-                    <span class="appro">appropriate</span>
-                    <p>Hassan Kordi</p>
-                </div>
-
-            </div>
-            <div class="col-lg-3 col-12">
-                <div (click)="openModal()" class="premium-item">
-                    <span class="per">95%</span>
-                    <span class="appro">appropriate</span>
-                    <p>Hassan Kordi</p>
-                </div>
-
-            </div>
-
+    <div *ngFor="let package of allData.lists">
+        <div class="semi-nav">
+            <img src="../../assets/5png/crowns.png" alt="">
+            <span>{{package.subPackageName}}</span>
         </div>
-        <div class="row">
-            <div class="col-lg-3 col-12">
-                <div (click)="openModal()" class="premium-item">
-                    <span class="per">95%</span>
-                    <span class="appro">appropriate</span>
-                    <p>Hassan Kordi</p>
+        <div class="container">
+
+            <div class="row">
+                <div *ngFor="let item of package.results" class="col-lg-3 col-12">
+                    <div (click)="openModal(item)" class="premium-item">
+                        
+                        <span class="per">{{item.accuracy | number: "1.0-1" }}%</span>
+                        <span class="appro">appropriate</span>
+                        <p>{{item.name}}</p>
+                    </div>
+
                 </div>
+                <!-- <div class="col-lg-3 col-12">
+                    <div (click)="openModal()" class="premium-item">
+                        <span class="per">95%</span>
+                        <span class="appro">appropriate</span>
+                        <p>Hassan Kordi</p>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-12">
+                    <div (click)="openModal()" class="premium-item">
+                        <span class="per">95%</span>
+                        <span class="appro">appropriate</span>
+                        <p>Hassan Kordi</p>
+                    </div>
+
+                </div> -->
 
             </div>
-            <div class="col-lg-3 col-12">
-                <div (click)="openModal()" class="premium-item">
-                    <span class="per">95%</span>
-                    <span class="appro">appropriate</span>
-                    <p>Hassan Kordi</p>
+            <!-- <div class="row">
+                <div class="col-lg-3 col-12">
+                    <div (click)="openModal()" class="premium-item">
+                        <span class="per">95%</span>
+                        <span class="appro">appropriate</span>
+                        <p>Hassan Kordi</p>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-12">
+                    <div (click)="openModal()" class="premium-item">
+                        <span class="per">95%</span>
+                        <span class="appro">appropriate</span>
+                        <p>Hassan Kordi</p>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-12">
+                    <div (click)="openModal()" class="premium-item">
+                        <span class="per">95%</span>
+                        <span class="appro">appropriate</span>
+                        <p>Hassan Kordi</p>
+                    </div>
+
                 </div>
 
-            </div>
-            <div class="col-lg-3 col-12">
-                <div (click)="openModal()" class="premium-item">
-                    <span class="per">95%</span>
-                    <span class="appro">appropriate</span>
-                    <p>Hassan Kordi</p>
-                </div>
-
-            </div>
-
-           
 
 
+
+            </div> -->
+            <!-- <button class="btn see-btn">See More</button> -->
         </div>
-        <button class="btn see-btn">See More</button>
+
     </div>
 
 
 
-
+    <!-- 
     <div class="semi-nav">
         <img src="../../assets/5png/crowns.png" alt="">
         <span>Distinguished Candidates Category 50</span>
@@ -171,29 +175,29 @@
 
         </div>
         <button class="btn see-btn">See More</button>
-    </div>
+    </div> -->
 
 </section>
 
 <div id="myModal" class="myModal">
     <div class="modalBox">
         <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
-        <h3> Hassan Kordi </h3>
+        <h3> {{singleUserData.name}} </h3>
         <div class="row">
             <div class="col-12 mt-5">
-                <div class="info-con">
-                    <span>Nationality</span>
-                    <span>Egyption</span>
+                <div *ngFor="let key of singleUserData.results" class="info-con">
+                    <span>{{key.key}}</span>
+                    <span>{{key.value[0]}}</span>
                 </div>
 
             </div>
-            <div class="col-12 mt-5">
+            <!-- <div class="col-12 mt-5">
                 <div class="info-con">
                     <span>Age</span>
                     <span> 25</span>
                 </div>
 
-              
+
             </div>
             <div class="col-12 mt-5">
                 <div class="info-con">
@@ -215,9 +219,13 @@
                     <span>Unmarried</span>
                 </div>
 
-            </div>
+            </div> -->
         </div>
-        <button id="modalAcceptBtn" class="btn">See More</button>
+        <!-- <button id="modalAcceptBtn" class="btn">See More</button> -->
+        <button (click)="changeStatus(singleUserData , 0)"
+        style="color: white; background-color: red; margin: 15px ;" class="btn">Rejected</button>
+    <button (click)="changeStatus(singleUserData , 1)" style="background-color: #fed94c; margin: 15px;"
+        class="btn">Accepted</button>
 
     </div>
 </div>

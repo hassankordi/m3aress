@@ -4,9 +4,28 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-4 btn-con">
-                <button class="btn"> Age </button>
-                <button class="btn"> Education </button>
+            <!-- searchData -->
+            <div *ngFor="let item of allLists" class="col-md-4 col-12 btn-con">
+                <!-- <button class="btn"> Age </button> -->
+                <!-- <button class="btn"> Education </button> -->
+                <!-- *ngFor="let item of lists" -->
+               <form [formGroup]="searchData" action="">
+                <select formControlName="{{item.properity}}"   name="{{item.properity}}" id="packages">
+                    <!-- [value]="item.properity"  -->
+                    <option value="" selected style="display: none; font-weight: 700;">{{item.properity}}</option>
+                   <!-- <option value="package1">package 1</option>
+                    <option value="package2">package 2</option>
+                    <option value="package3">package 3</option>  -->
+                    <option *ngFor="let i of item.results" value="{{i.id}}">{{i.text}}</option>
+    
+                </select>
+               </form>
+                
+
+            </div>
+
+            <div class="col-md-4 col-12 btn-con">
+                <button  (click)="search()" class="btn"> Search <i class="fas fa-search"></i> </button>
             </div>
         </div>
     </div>
@@ -15,6 +34,28 @@
 
         <h2>Research Results</h2>
 
+        <div (click)="openModal(item)"  *ngFor="let item of searchResults" class="row row-container">
+            <div class="col-lg-4 col-md-5 col-6">
+                <div class="info-con">
+                   <p> {{item.name}}</p>
+                   <p> <span>appropriate</span> <span style="color: #Fed94c;" class="per">{{item.accuracy | number: "1.0-1" }}%</span></p>
+
+                </div>
+                
+            </div>
+            <div class="col-lg-4 col-md-5 col-6">
+                <!-- <div class="time-con">
+                   <p>
+                        <i class="fas fa-times mx-5"></i>
+                        <i class="fas fa-check"></i>
+                    </p>
+
+                </div> -->
+                
+            </div>
+
+        </div>
+<!-- 
         <div class="row row-container">
             <div class="col-lg-4 col-md-5 col-6">
                 <div class="info-con">
@@ -37,28 +78,6 @@
 
         </div>
 
-        <div class="row row-container">
-            <div class="col-lg-4 col-md-5 col-6">
-                <div class="info-con">
-                   <p> mohammed Yosry</p>
-                   <p> <span>appropriate</span> <span style="color: #Fed94c;" class="per">100%</span></p>
-
-                </div>
-                
-            </div>
-            <div class="col-lg-4 col-md-5 col-6">
-                <div class="time-con">
-                   <p>
-                        <i class="fas fa-times mx-5"></i>
-                        <i class="fas fa-check"></i>
-                    </p>
-
-                </div>
-                
-            </div>
-
-        </div>
-
 
         <div class="row row-container">
             <div class="col-lg-4 col-md-5 col-6">
@@ -80,10 +99,36 @@
                 
             </div>
 
-        </div>
+        </div> -->
 
     </div>
 
 </section>
+
+
+<div id="myModal" class="myModal">
+    <div class="modalBox">
+        <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
+        <h3> {{singleUserData.name}} </h3>
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div *ngFor="let key of singleUserData.results" class="info-con">
+                    <span>{{key.key}}</span>
+                    <span>{{key.value[0]}}</span>
+                </div>
+
+            </div>
+        
+        </div>
+        <!-- <button id="modalAcceptBtn" class="btn">See More</button> -->
+        <div class="d-flex btns-con  mt-5">
+            <button (click)="acceptSearch(singleUserData , 0)" style="color: white; background-color: red;" class="btn">Rejected</button>
+            <button (click)="acceptSearch(singleUserData , 1)"  style="background-color: #fed94c;" class="btn">Accepted</button>
+            
+
+        </div>
+
+    </div>
+</div>
 
 <app-send-us></app-send-us>

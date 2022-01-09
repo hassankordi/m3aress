@@ -9,7 +9,10 @@
     .col-md-6{
       p{
         direction: rtl;
-        font-weight: 500;
+        font-weight: 800;
+        // color: #f3c221;
+        color: #333;
+
       }
     }
   }
@@ -28,6 +31,7 @@
       // background-color: tomato;
       img {
         width: 100%;
+        height: calc(100% - 35px);
         display: block;
       }
       button {
@@ -152,7 +156,7 @@
     background-color: #fff;
     border-radius: 8px;
     position: relative;
-    width: 500px;
+    width: 350px;
     min-height: 70vh;
     top: 25px;
     left: 50%;
@@ -170,14 +174,15 @@
       display: flex;
       justify-content: space-between;
       font-family: "Josefin Sans", sans-serif;
+      // margin: 20px;
       p {
         font-size: 22px;
         font-weight: 800;
       }
     }
-    #modalAcceptBtn {
+    #seeMoreBtn , #modalAcceptBtn {
       position: absolute;
-      bottom: 80px;
+      bottom: -30px;
       left: 50%;
       //    right: 50%;
       transform: translate(-50%, -50%);

@@ -4,11 +4,26 @@
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
-    h3 {
-        text-align: start;
-        font-family: "Josefin Sans", sans-serif;
-        font-weight: 700;
+    .title-con {
+        h3 {
+            display: flex;
+            justify-content: space-between;
+            span {
+              
+                font-family: "Josefin Sans", sans-serif;
+                font-weight: 700;
+            }
+            button {
+                font-family: "Josefin Sans", sans-serif;
+                font-weight: 700;
+                background-color: #f3c221;
+                margin-bottom: 15px;
+            }
+        }
+
+      
     }
+  
 
     .editProfile-box {
         background-color: hsl(0, 0%, 98%);
@@ -22,51 +37,50 @@
             display: inline-block;
             text-align: center;
         }
-      .edit-inputs {
-        // background-color: teal;
-        display: flex;
-        align-items: center;
-        
-        div {
-            width: 100%;
-            input {
-                border: none;
-                border-bottom: 2px #fed94c solid;
-                margin: 50px 0px;
-                &::placeholder {
-                    font-weight: 800;
-                    padding: 30px 50px;
-                    font-size: 25px;
-                    background-color: hsl(0, 0%, 98%);
+        .edit-inputs {
+            // background-color: teal;
+            display: flex;
+            align-items: center;
+
+            div {
+                width: 100%;
+                input {
+                    border: none;
+                    border-bottom: 2px #fed94c solid;
+                    margin: 50px 0px;
+                    &::placeholder {
+                        font-weight: 800;
+                        padding: 30px 50px;
+                        font-size: 25px;
+                        background-color: hsl(0, 0%, 98%);
+                    }
                 }
-            }
-            b{
-               p{
-                text-align: end;
-                // background-color: #fed94c;
-               }
-            }
-            p{
-                text-align: center;
-                margin: 30px;
-                span{
-                    color: #fed94c;
-                    font-weight: 800;
-                    cursor: pointer;
+                b {
+                    p {
+                        text-align: end;
+                        // background-color: #fed94c;
+                    }
+                }
+                p {
+                    text-align: center;
+                    margin: 30px;
+                    span {
+                        color: #fed94c;
+                        font-weight: 800;
+                        cursor: pointer;
+                    }
                 }
             }
         }
-     
-    }
-        .com-btn{
-            background-image: linear-gradient(#FED94C ,#F3C221);
+        .com-btn {
+            background-image: linear-gradient(#fed94c, #f3c221);
             padding: 12px 40px;
             font-weight: 700;
-            width: 25%;
+            // width: 25%;
             border-radius: 30px;
         }
-        
-        .op{
+
+        .op {
             padding: 20px;
             font-weight: 700;
             font-size: 20px;

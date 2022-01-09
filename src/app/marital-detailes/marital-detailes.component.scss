@@ -1,0 +1,73 @@
+.maritalDetailes-container {
+    margin: 50px 0px;
+    text-align: end;
+    h3 {
+        text-align: center;
+
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 700;
+    }
+    .adv-item-con {
+        display: flex;
+        justify-content: center;
+        .Adv-item {
+            text-align: center;
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            // background-color: tomato;
+            img {
+                width: 100%;
+                display: block;
+                height: 200px;
+            }
+            button {
+                width: 100%;
+                background-image: linear-gradient(#fed94c, #f3c221);
+                // height: 60px;
+                height: 35px;
+                height: 60px;
+
+                font-weight: 700;
+            }
+        }
+    }
+
+    .pdf-btn {
+        margin: 25px 0px;
+        background-color: #f3c221;
+        color: white;
+        transition: all 0.2s ease-in;
+        &:hover {
+            transform: scale(1.1);
+        }
+        i {
+            //    background-color: white;
+            color: white;
+            margin: 0px 10px;
+        }
+        a {
+            color: white;
+        }
+    }
+    .fa-youtube{
+        // background-color: #f20000;
+        color: #f20000;
+        // margin: 25px 0px;
+        font-size: 30px;
+        transition: all 0.2s ease-in;
+        &:hover {
+            transform: scale(1.1);
+        }
+
+    }
+    // .see-more-btn {
+    //     font-weight: 700;
+    //     font-size: 20px;
+    //     padding: 12px 44px;
+    //     background-image: linear-gradient(#fed94c, #f3c221);
+    //     margin: 30px;
+    //     border-radius: 40px;
+    // }
+}

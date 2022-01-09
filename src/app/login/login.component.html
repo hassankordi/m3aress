@@ -22,3 +22,33 @@
 </div>
 
 </section>
+
+
+<div id="myModal" class="myModal">
+  <div class="modalBox">
+      <!-- <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i> -->
+
+      <div class="row">
+       
+          <div class="col-12 mt-5">
+            <span>{{femaleTerms}}</span>
+            <form [formGroup]="parentData" (ngSubmit)="sendParentData()" action="">
+              <input  formControlName="name"  placeholder="Guardin's Name" class="form-control" type="text">
+              <input  formControlName="phone"  placeholder="Guardin's mobile" class="form-control" type="text">
+              <input  formControlName="countryCode"  placeholder="Guardin's Country Code" class="form-control" type="text">
+              
+              <button  id="modalAcceptBtn" [disabled]='!parentData.valid' class="btn com-btn">Completing</button>
+             </form>
+
+          </div>
+
+      </div>
+     
+
+
+
+      <!-- 
+     
+       -->
+  </div>
+</div>

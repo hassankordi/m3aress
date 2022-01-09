@@ -21,6 +21,7 @@ export class AuthorizationService {
   // this._Authorization.isAdmin.getValue()
 
   isLogin = new BehaviorSubject(false)
+  lang = new BehaviorSubject("en")
   // isAdmin = new BehaviorSubject(false);
   // isUser =  new BehaviorSubject(false)  
 
@@ -64,6 +65,18 @@ export class AuthorizationService {
     return this._HttpClient.post(environment.baseUrl + "users/register", data)
   }
 
+  fillParentData(token , parentData) {
+    let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
+    const obj = {
+      "guardianFemaleName": parentData.name,
+      "guardianFemalePhone": parentData.phone,
+      "guardianFemaleCountryCode": parentData.countryCode
+    }
+
+    return this._HttpClient.put<any>(
+      environment.baseUrl + "users/updateTermsAndConditionForFemale", obj, { headers: headers_object })
+
+  }
 
   getProfile(token): Observable<any> {
     let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
@@ -112,6 +125,19 @@ export class AuthorizationService {
   //   return this._HttpClient.put<any>(
   //     environment.baseUrl + `/factories/${factory.id}`,factory,this.httpOptions);
   // }
+  // 
+
+  changePassword(token, data): Observable<any> {
+    let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
+
+    return this._HttpClient.post(environment.baseUrl + "users/changePassword", data, { headers: headers_object })
+  }
+
+
+
+
+
+
 
 
   getUsersCount(): Observable<any> {
@@ -135,7 +161,7 @@ export class AuthorizationService {
   }
 
 
-  addUserAppearance(userData1 ,userData2 ,userData3 , token): Observable<any> {
+  addUserAppearance(userData1, userData2, userData3, token): Observable<any> {
     let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
     const obj = {
       "results": [
@@ -159,7 +185,7 @@ export class AuthorizationService {
           "text": "Hair Color",
           "ids": [userData1.HairColor]
         },
-        {  
+        {
           "text": "Hair Length",
           "ids": [userData1.HairLength]
         },
@@ -177,7 +203,7 @@ export class AuthorizationService {
 
 
 
-                   
+
 
         {
           "text": "Age",
@@ -199,7 +225,7 @@ export class AuthorizationService {
           "text": "Marriage Type",
           "ids": [userData2.MarriageType]
         },
-        {  
+        {
           "text": "Occupation",
           "ids": [userData2.Occupation]
         },
@@ -209,7 +235,7 @@ export class AuthorizationService {
         },
 
 
-         
+
 
         {
           "text": "Another Languages",
@@ -225,18 +251,18 @@ export class AuthorizationService {
         },
         {
           "text": " Nationality",
-          "ids": [userData3. Nationality]
+          "ids": [userData3.Nationality]
         },
-        
-        {  
+
+        {
           "text": "Religion Value ",
-          "ids": [userData3.ReligionValue ]
+          "ids": [userData3.ReligionValue]
         },
         {
           "text": "Religion",
           "ids": [userData3.Religion]
         },
-    
+
       ]
       ,
       "isMyData": 1
@@ -254,9 +280,9 @@ export class AuthorizationService {
     // }
     // console.log(data);
 
-    return this._HttpClient.post(environment.baseUrl + "users/appearanceData?Lang=en", obj , {headers:headers_object})
+    return this._HttpClient.post(environment.baseUrl + "users/appearanceData?Lang=en", obj, { headers: headers_object })
   }
-  putUserAppearance(userData1 ,userData2 ,userData3 , token): Observable<any> {
+  putUserAppearance(userData1, userData2, userData3, token): Observable<any> {
     let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
     const obj = {
       "results": [
@@ -280,7 +306,7 @@ export class AuthorizationService {
           "text": "Hair Color",
           "ids": [userData1.HairColor]
         },
-        {  
+        {
           "text": "Hair Length",
           "ids": [userData1.HairLength]
         },
@@ -298,7 +324,7 @@ export class AuthorizationService {
 
 
 
-                   
+
 
         {
           "text": "Age",
@@ -320,7 +346,7 @@ export class AuthorizationService {
           "text": "Marriage Type",
           "ids": [userData2.MarriageType]
         },
-        {  
+        {
           "text": "Occupation",
           "ids": [userData2.Occupation]
         },
@@ -330,7 +356,7 @@ export class AuthorizationService {
         },
 
 
-         
+
 
         {
           "text": "Another Languages",
@@ -346,28 +372,30 @@ export class AuthorizationService {
         },
         {
           "text": " Nationality",
-          "ids": [userData3. Nationality]
+          "ids": [userData3.Nationality]
         },
-        
-        {  
+
+        {
           "text": "Religion Value ",
-          "ids": [userData3.ReligionValue ]
+          "ids": [userData3.ReligionValue]
         },
         {
           "text": "Religion",
           "ids": [userData3.Religion]
         },
-    
+
       ]
       ,
       "isMyData": 1
     }
     console.log(obj);
 
+    const language = this.lang.getValue()
 
-    return this._HttpClient.put(environment.baseUrl + "users/appearanceData?lang=en", obj , {headers:headers_object})
+
+    return this._HttpClient.put(environment.baseUrl + `users/appearanceData?lang=${language}`, obj, { headers: headers_object })
   }
-  addPartnerAppearance(userData1 ,userData2 ,userData3 , token): Observable<any> {
+  addPartnerAppearance(userData1, userData2, userData3, token): Observable<any> {
     let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
     const obj = {
       "results": [
@@ -391,7 +419,7 @@ export class AuthorizationService {
           "text": "Hair Color",
           "ids": [userData1.HairColor]
         },
-        {  
+        {
           "text": "Hair Length",
           "ids": [userData1.HairLength]
         },
@@ -409,7 +437,7 @@ export class AuthorizationService {
 
 
 
-                   
+
 
         {
           "text": "Age",
@@ -431,7 +459,7 @@ export class AuthorizationService {
           "text": "Marriage Type",
           "ids": [userData2.MarriageType]
         },
-        {  
+        {
           "text": "Occupation",
           "ids": [userData2.Occupation]
         },
@@ -441,7 +469,7 @@ export class AuthorizationService {
         },
 
 
-         
+
 
         {
           "text": "Another Languages",
@@ -457,29 +485,29 @@ export class AuthorizationService {
         },
         {
           "text": " Nationality",
-          "ids": [userData3. Nationality]
+          "ids": [userData3.Nationality]
         },
-        
-        {  
+
+        {
           "text": "Religion Value ",
-          "ids": [userData3.ReligionValue ]
+          "ids": [userData3.ReligionValue]
         },
         {
           "text": "Religion",
           "ids": [userData3.Religion]
         },
-    
+
       ]
       ,
       "isMyData": 0
     }
     console.log(obj);
 
-    
 
-    return this._HttpClient.post(environment.baseUrl + "users/appearanceData?Lang=en", obj , {headers:headers_object})
+
+    return this._HttpClient.post(environment.baseUrl + "users/appearanceData?Lang=en", obj, { headers: headers_object })
   }
-  putPartnerAppearance(userData1 ,userData2 ,userData3 , token): Observable<any> {
+  putPartnerAppearance(userData1, userData2, userData3, token): Observable<any> {
     let headers_object = new HttpHeaders().set("Authorization", "Bearer " + token);
     const obj = {
       "results": [
@@ -503,7 +531,7 @@ export class AuthorizationService {
           "text": "Hair Color",
           "ids": [userData1.HairColor]
         },
-        {  
+        {
           "text": "Hair Length",
           "ids": [userData1.HairLength]
         },
@@ -521,7 +549,7 @@ export class AuthorizationService {
 
 
 
-                   
+
 
         {
           "text": "Age",
@@ -543,7 +571,7 @@ export class AuthorizationService {
           "text": "Marriage Type",
           "ids": [userData2.MarriageType]
         },
-        {  
+        {
           "text": "Occupation",
           "ids": [userData2.Occupation]
         },
@@ -553,7 +581,7 @@ export class AuthorizationService {
         },
 
 
-         
+
 
         {
           "text": "Another Languages",
@@ -569,44 +597,49 @@ export class AuthorizationService {
         },
         {
           "text": " Nationality",
-          "ids": [userData3. Nationality]
+          "ids": [userData3.Nationality]
         },
-        
-        {  
+
+        {
           "text": "Religion Value ",
-          "ids": [userData3.ReligionValue ]
+          "ids": [userData3.ReligionValue]
         },
         {
           "text": "Religion",
           "ids": [userData3.Religion]
         },
-    
+
       ]
       ,
       "isMyData": 0
     }
     console.log(obj);
 
-
-    return this._HttpClient.put(environment.baseUrl + "users/appearanceData?lang=en", obj , {headers:headers_object})
+    const language = this.lang.getValue()
+    return this._HttpClient.put(environment.baseUrl + `users/appearanceData?lang=${language}`, obj, { headers: headers_object })
   }
 
 
-sendNumToRestesPass(data): Observable<any> {
-  return this._HttpClient.post(environment.baseUrl + "users/send", data)
-}
-sendCodeToRestesPass(data): Observable<any> {
-  return this._HttpClient.post(environment.baseUrl + "users/validate", data)
-}
-sendpassToRestesPass(data): Observable<any> {
-  return this._HttpClient.post(environment.baseUrl + "users/reset", data)
-}
+  sendNumToRestesPass(data): Observable<any> {
+    return this._HttpClient.post(environment.baseUrl + "users/send", data)
+  }
+  sendCodeToRestesPass(data): Observable<any> {
+    return this._HttpClient.post(environment.baseUrl + "users/validate", data)
+  }
+  sendpassToRestesPass(data): Observable<any> {
+    return this._HttpClient.post(environment.baseUrl + "users/reset", data)
+  }
 
 
 
 
 
-  constructor(private _HttpClient: HttpClient) { }
+  constructor(private _HttpClient: HttpClient) {
+    if(localStorage.getItem("lang")){
+      this.lang.next(localStorage.getItem("lang"))
+    }
+
+   }
   /*
  
    obj= {

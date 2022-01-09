@@ -1,43 +1,43 @@
-.nav-container {
-    background-color: tomato;
-    background-image: linear-gradient(#fed94c, #f3c221);
-    padding: 10px;
-    .brand-image {
-        // background-color: teal;
-        img {
-            background-color: white;
-            width: 70px;
-            padding: 10px 8px;
-            border-radius: 50%;
-        }
-    }
-    .links-con {
-        ul {
-            display: flex;
-            list-style: none;
-            li {
-                margin: 10px;
-                a {
-                    font-family: "Josefin Sans", sans-serif;
-                    text-decoration: none;
-                    color: white;
-                    font-size: 20px;
-                }
-            }
-        }
-    }
-    .icons-con {
-        ul {
-            display: flex;
-            list-style: none;
-            li {
-                margin: 10px;
-                font-size: 20px;
-                color: white;
-            }
-        }
-    }
-}
+// .nav-container {
+//     background-color: tomato;
+//     background-image: linear-gradient(#fed94c, #f3c221);
+//     padding: 10px;
+//     .brand-image {
+//         // background-color: teal;
+//         img {
+//             background-color: white;
+//             width: 70px;
+//             padding: 10px 8px;
+//             border-radius: 50%;
+//         }
+//     }
+//     .links-con {
+//         ul {
+//             display: flex;
+//             list-style: none;
+//             li {
+//                 margin: 10px;
+//                 a {
+//                     font-family: "Josefin Sans", sans-serif;
+//                     text-decoration: none;
+//                     color: white;
+//                     font-size: 20px;
+//                 }
+//             }
+//         }
+//     }
+//     .icons-con {
+//         ul {
+//             display: flex;
+//             list-style: none;
+//             li {
+//                 margin: 10px;
+//                 font-size: 20px;
+//                 color: white;
+//             }
+//         }
+//     }
+// }
 .matiral-container {
     margin: 50px 0px;
     text-align: end;
@@ -52,7 +52,7 @@
         justify-content: center;
         .Adv-item {
             text-align: center;
-            margin: 20px;
+            margin: 30px 20px;
             width: 200px;
             height: 235px;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -60,7 +60,7 @@
             img {
                 width: 100%;
                 display: block;
-                height: 235px;
+                height: 200px;
             }
             button {
                 width: 100%;

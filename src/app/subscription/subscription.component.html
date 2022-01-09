@@ -61,7 +61,7 @@
         <p>{{modalData.desc}}</p>
 
         <div class="modalBtns">
-            <button [disabled]="!isLogin" id="modalAcceptBtn" class="btn">Accept</button>
+            <button (click)="openModal1()" [disabled]="!isLogin" id="modalAcceptBtn" class="btn">Package Subscribe</button>
             <button routerLink="/register"  [disabled]="isLogin" id="modalRegisterBtn" class="btn">Register</button>
         </div>
 
@@ -70,19 +70,18 @@
 <app-send-us></app-send-us>
 
 
-<!-- 
-<div id="myModal" class="myModal">
+
+<div id="myModal1" class="myModal">
     <div class="modalBox">
-        <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
+        <i (click)="closeModal1()" id="closeModal" class="fas fa-times"></i>
         <h3>الشروط و الاحكام</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam assumenda esse ab
-            repudiandae rerum nihil consequuntur veritatis delectus minus molestias, iure provident
-            culpa perferendis nostrum odio omnis maxime. Delectus, perspiciatis.</p>
+        <p>{{terms}}</p>
             <label class="checkbox">
                 اوافق علي الشروط و الاحكام 
-                <input type="checkbox" value="accept" id="remember_me"> 
+                <input (change)="checkedFun()" type="checkbox" value="accept" id="remember_me"> 
             </label>
-            <button id="modalAcceptBtn" class="btn">Accept</button>
+            <!-- if true then disabled -->
+            <button  [disabled]="!checked" id="modalAcceptBtn" class="btn mt-2"><a target="_blank" href="https://m3arees.in/PayMent/Index?userId={{userId}}&subpackageId={{packageId}}">Accept</a></button>
 
     </div>
-  </div> -->
+  </div>

@@ -18,7 +18,7 @@ export class EditProfileComponent implements OnInit {
     this.AuthAPI.editProfile(this.token,this.userData.value , this.gender).subscribe((res)=>{
       // localStorage.setItem("userToken" , res.token)
       alert("تم التسجيل")
-      // this.router.navigate["/login"];
+      this.router.navigate["/profile"];
       
 
       console.log(res);
@@ -38,9 +38,9 @@ export class EditProfileComponent implements OnInit {
     FamilyName:new FormControl("",[Validators.required]),
     phone:new FormControl("",[Validators.required]),
     countryCode:new FormControl("",[Validators.required]),
-    guardianFemaleName:new FormControl("name",[Validators.required ]),
-    guardianFemalePhone:new FormControl("phone",[Validators.required]),
-    guardianFemaleCountryCode:new FormControl("code",[Validators.required]),
+    guardianFemaleName:new FormControl("",[Validators.required ]),
+    guardianFemalePhone:new FormControl("",[Validators.required]),
+    guardianFemaleCountryCode:new FormControl("",[Validators.required]),
   })
   constructor(private AuthAPI:AuthorizationService , private router:Router) {
     // alert(this.gender)

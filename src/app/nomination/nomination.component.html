@@ -40,17 +40,29 @@
         <h2>Nomination</h2>
         <div class="nomination-box">
             <p>Send an invitation to nominate one of your friends to find the right partner</p>
-
+            <!-- 
             <select name="Choose Package" id="packages">
                 <option value="Choose Package" selected style="display: none; font-weight: 700;">Choose Package</option>
-                <option value="package1">package 1</option>
+               <option value="package1">package 1</option>
                 <option value="package2">package 2</option>
-                <option value="package3">package 3</option>
-            </select>
+                <option value="package3">package 3</option> 
+                <option *ngFor="let i of data" value="">{{i.subPackageName}}</option>
 
-            <input placeholder="First Name" type="text">
-            <input placeholder="Family Name" type="text">
-            <input placeholder="Mobile" type="text">
+            </select> -->
+            <form [formGroup]="inviteData" action="">
+
+                <!-- <input placeholder="First Name" type="text"> -->
+
+                <input formControlName="phone" placeholder="Phone" type="text">
+                <!-- <input formControlName="countryCode" placeholder="Counrty Code" type="text"> -->
+                <select formControlName="countryCode"  type="text" name="" id="">
+                    <option  class="d-none" value="Counrty Code">Counrty Code</option>
+                    <option *ngFor="let key of conntriesCodes" value="key">{{key}}</option>
+                </select>
+
+            </form>
+            <!-- {"+965", "+974", "+966", "+212", "+971", "+973", "+968", "+962", "+20", "+963", "+216", "+218", "+970",
+            "+213", "+222", "+961", "+249", "+964", "+967", "+253", "+252", "+269"} -->
             <!-- [tooltipField]="TooltipLabel.Name" -->
             <!-- <ngx-intl-tel-input [cssClass]="''" [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
             [searchCountryFlag]="true" [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
@@ -71,11 +83,13 @@
                     </div>
                 </div>
                 <div class="col-6 text-inv">
-                    عدد الدعاوات
+                    عدد الدعوات
                 </div>
             </div>
 
-            <button (click)="openModal()" class="btn">
+            <!-- (click)="openModal()" -->
+            <!-- call first api  -->
+            <button [disabled]="!inviteData.valid" (click)="sendInv()"  class="btn">
                 Send
             </button>
 
@@ -88,30 +102,32 @@
         <i (click)="closeModal()" id="closeModal" class="fas fa-times"></i>
         <h3> Hassan Kordi </h3>
         <div class="row">
-            <div class="col-12 mt-5">
+            <!-- <div class="col-12 mt-5">
                 <div class="info-con">
                     <span>Bouquets</span>
                     <span>Premium packages</span>
                 </div>
 
-            </div>
+            </div> -->
+ 
             <div class="col-12 mt-5">
                 <div class="info-con">
                     <span>Mobile</span>
-                    <span> 01094454829</span>
+                    <span> {{inviteData.value.phone}}</span>
                 </div>
 
-              
+
             </div>
             <div class="col-12 mt-5">
                 <div class="info-con">
                     <span>Invitations Number</span>
-                    <span>5</span>
+                    <span>{{counter}}</span>
                 </div>
 
             </div>
         </div>
-        <button id="modalAcceptBtn" class="btn">Accept</button>
+         <!-- save -->
+        <button (click)="saveInv()" id="modalAcceptBtn" class="btn">Accept</button>
 
     </div>
 </div>

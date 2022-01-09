@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthorizationService } from '../authorization.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,12 +12,17 @@ export class NavComponent implements OnInit {
   inService: Boolean = false;
   inNomination: Boolean = false;
   navToggle: Boolean = false;
-  constructor() {}
+  constructor(private route:Router , private AuthApi:AuthorizationService) {}
 
   scrollToContact() {
     (document.getElementById('sendUs') as HTMLInputElement).scrollIntoView({
       behavior: 'smooth',
     });
+  }
+  logOut(){
+    localStorage.clear();
+    this.route.navigate(["/home"])
+    // console.log("log Out");
   }
   toggle() {
     this.navToggle = !this.navToggle;
@@ -35,6 +42,13 @@ export class NavComponent implements OnInit {
     } else if (window.location.href.includes('nomination')) {
       this.inNomination = true;
     }
+  }
+
+  lang(lan){
+    
+    this.AuthApi.lang.next(lan)
+    localStorage.setItem("lang" , lan)
+  
   }
 
   ngOnInit(): void {

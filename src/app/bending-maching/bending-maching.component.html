@@ -1,10 +1,10 @@
 <app-nav></app-nav>
 <section class="bending-container">
     <div class="container">
-        <h3>Bending Maching</h3>
+        <h3>Pending Maching</h3>
         <div class="bending-box">
             <div class="container">
-                <h4>Congratulation</h4>
+                <h4 class="text-center">Congratulations</h4>
                 <p style="margin-left: 30px; font-weight: 700;">You Have Been Approved, And This Is Life Partner
                     Information</p>
                 <div class="row justify-content-center ">
@@ -15,22 +15,24 @@
                         <div>
                             <div class="d-flex mt-1">
                                 <span class="circle"></span>
-                                <p>Name</p>
+                                <p *ngIf="!isFemale">Guardian's Name</p>
+                                <p *ngIf="isFemale">Name</p>
 
                             </div>
                             <div class="d-flex">
                                 <span class="circle"></span>
-                                <p>Mobile</p>
+                                <p *ngIf="isFemale">Mobile</p>
+                                <p *ngIf="!isFemale"> Guardian's Mobile</p>
 
                             </div>
                             <div class="d-flex">
                                 <span class="circle"></span>
-                                <p>Bending</p>
+                                <p>Pending</p>
 
                             </div>
                             <div class="d-flex">
                                 <span class="circle"></span>
-                                <p>14 Day</p>
+                                <p> Remaining Days </p>
 
                             </div>
 
@@ -38,19 +40,20 @@
 
                     </div>
                     <div class="col-lg-5 col-6 text-end">
-                        <p> <span>Hassan Kordi</span></p>
-                        <p> <span>01094454829</span></p>
-                        <p> <button class="btn">Life Partner</button></p>
+                        <p> <span>{{partnerData.name}}</span></p>
+                        <p> <span>{{partnerData.phone}}</span></p>
+                        <p> <button class="btn">Diffrences</button></p>
+                        <p> <span> {{partnerData.remainingDays}}</span></p>
                     </div>
 
                 </div>
-                <div class="row warning mt-5">
-                    <h4>Warning</h4>
+                <div *ngIf="!isFemale" class="row warning mt-5">
+                    <h4>Attention!!</h4>
                     <p>You Are Not Allowed To Inform The Parent That The Nomination Was Made Through The Application</p>
                 </div>
                 <div class="d-flex btns-con  mt-5">
-                    <button style="color: white; background-color: red;" class="btn">Rejected</button>
-                    <button style="background-color: #fed94c;" class="btn">Accepted</button>
+                    <button (click)="changePendingStatus(partnerData,0)" style="color: white; background-color: red;" class="btn">Rejected</button>
+                    <button (click)="changePendingStatus(partnerData,1)" style="background-color: #fed94c;" class="btn">Accepted</button>
                     
 
                 </div>

@@ -17,25 +17,53 @@ export class BendingMachingComponent implements OnInit {
   // machineStep: string = 'side-stepper-circle';
   // resourceStep: string = 'side-stepper-circle';
   // tapSidename: string = 'Set Time';
- 
- token:any = localStorage.getItem("userToken")
-  constructor(private API:ApiService , private route:Router) {
-   this.API.getBendingMaching(this.token).subscribe(
-     (res)=>{console.log(res);} ,(err)=>{
-       
-      console.log(err.error.messageError);
-      if (err.error.messageError == 90) {
-        alert("You Are Not In Pending Maching Now");
-        this.route.navigate(["/profile"])
+
+  gender: any = localStorage.getItem("gender");
+  isFemale: boolean ;
+  partnerData: any = {}
+  token: any = localStorage.getItem("userToken")
+  constructor(private API: ApiService, private route: Router) {
+    alert(this.gender);
+    alert(this.isFemale);
+    this.isFemale = Boolean(this.gender) ;
+    alert(this.isFemale);
+    console.log(this.isFemale);
+    
+    // if (this.gender == false) {
+    //   // female 
+    //   this.isFemale = true
+
+    // } else {
+    //   this.isFemale = false
+    // }
+
+    this.API.getBendingMaching(this.token).subscribe(
+      (res) => {
+        console.log(res);
+        this.partnerData = res
+      }, (err) => {
+
+        console.log(err.error.messageError);
+        if (err.error.messageError == 90) {
+          alert("You Are Not In Pending Maching Now");
+          this.route.navigate(["/profile"])
 
 
-      }
+        }
 
-     
-     })
+
+      })
   }
 
-  ngOnInit(): void {}
+
+  changePendingStatus(data, num) {
+    this.API.ChangePendingStatus(this.token, data, num).subscribe((res) => {
+      console.log(res);
+    }, (err) => {
+      console.log(err);
+    })
+  }
+  ngOnInit(): void { }
   // sideStepper(stepNumber) {
   //   this.stepSide = stepNumber;
   //   if (stepNumber == 1) {

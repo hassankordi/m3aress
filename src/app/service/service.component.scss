@@ -48,6 +48,8 @@ h2{
     // margin: 20px;
     position: relative;
     overflow: hidden;
+    height: 335px;
+    width: 300px;
     &:hover{
         .layer{
             transform: translateY(0);
@@ -57,14 +59,15 @@ h2{
         width: 100%;
     }
     .layer{
-        padding: 5px;
+        // width: 300px;
+        padding: 10px;
         color: white;
         text-align: center;
         position: absolute;
         top: 10px;
         left: 10px;
         right: 10px;
-        bottom: 10px;
+        bottom: 0px;
         background-color: rgba(0, 0, 0, 0.7);
         transform: translateY(400px);
         transition: all 0.4s ease-in;
@@ -81,6 +84,9 @@ h2{
             margin: 0px 20px;
             font-weight: 600;
             font-family: "Josefin Sans", sans-serif;
+            a{
+                text-decoration: none;
+            }
         }
         i{
             color: #f3c221;

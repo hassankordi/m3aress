@@ -60,7 +60,13 @@
             </span>
           </li>
           <li><i class="far fa-bell"></i></li>
-          <li><i class="fas fa-language"></i></li>
+          <li> <span class="list-tog"> <span><i class="fas fa-language"></i> </span>
+
+            <ul class="nom-ul" >
+              <li (click)="lang('ar')" >عربي </li>
+              <li (click)="lang('en')">English</li>
+            </ul>
+          </span></li>
         </ul>
       </div>
     </div>
@@ -113,19 +119,34 @@
   </ul>
   <div class="icons-con newIcons-con">
     <ul>
-      <li routerLink="/premium"><i class="fas fa-crown"></i></li>
-      <li routerLink="/search"><i class="fas fa-search"></i></li>
+      <li routerLink="/premium"><span><i class="fas fa-crown"></i></span></li>
+      <li routerLink="/search"><span><i class="fas fa-search"></i></span></li>
       <li routerLink="/profile">
            
         <span class="list-tog"> <i class="fas fa-user"></i>
 
           <ul class="nom-ul" >
             <li routerLink="/profile" >Profile </li>
-            <li>logOut</li>
+            <li (click)="logOut()">logOut</li>
           </ul>
         </span>
       </li>
-      <!-- <li><i class="far fa-bell"></i></li> -->
+      <li>
+      
+        <span><i class="far fa-bell"></i></span>
+      </li>
+
+      <li>
+        <span class="list-tog"> <span><i class="fas fa-language"></i> </span>
+
+          <ul class="nom-ul" >
+            <li (click)="lang('ar')" >عربي </li>
+            <li (click)="lang('en')">English</li>
+          </ul>
+        </span>
+       
+      </li>
+    
     </ul>
   </div>
 
