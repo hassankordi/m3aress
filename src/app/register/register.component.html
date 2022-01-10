@@ -36,7 +36,11 @@
             </ngx-intl-tel-input>
           </form> -->
             <input formControlName="phone" placeholder="Phone" class="form-control" type="text" />
-            <input formControlName="countryCode" placeholder="Country Code" class="form-control" type="text" />
+            <!-- <input formControlName="countryCode" placeholder="Country Code" class="form-control" type="text" /> -->
+            <select formControlName="countryCode" class="form-control"  type="text" name="" id="">
+              <option  class="d-none" value="">Country Code</option>
+              <option *ngFor="let key of conntriesCodes" value="key">{{key}}</option>
+          </select> 
             <input formControlName="password" placeholder="Password" class="form-control" type="password" />
             <div *ngIf='
             userData.controls.password.touched &&
@@ -82,7 +86,11 @@
             <form [formGroup]="parentData" (ngSubmit)="sendParentData()" action="">
               <input  formControlName="name"  placeholder="Guardin's Name" class="form-control" type="text">
               <input  formControlName="phone"  placeholder="Guardin's mobile" class="form-control" type="text">
-              <input  formControlName="countryCode"  placeholder="Guardin's Country Code" class="form-control" type="text">
+              <!-- <input  formControlName="countryCode"  placeholder="Guardin's Country Code" class="form-control" type="text"> -->
+              <select formControlName="countryCode" class="form-control"  type="text" name="" id="">
+                <option  class="d-none" value="">Guardin's Country Code</option>
+                <option *ngFor="let key of conntriesCodes" value="key">{{key}}</option>
+            </select> 
               
               <button  id="modalAcceptBtn" [disabled]='!parentData.valid' class="btn com-btn">Completing</button>
              </form>

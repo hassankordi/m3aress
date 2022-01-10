@@ -11,6 +11,9 @@ import { AuthorizationService } from '../authorization.service';
 })
 export class LoginComponent implements OnInit {
 
+  conntriesCodes = ["+965", "+974", "+966", "+212", "+971", "+973", "+968", "+962", "+20", "+963", "+216", "+218", "+970",
+    "+213", "+222", "+961", "+249", "+964", "+967", "+253", "+252", "+269"]
+
   token: any = ""
   femaleTerms: any = ""
   sendData() {
@@ -30,10 +33,10 @@ export class LoginComponent implements OnInit {
           // write your logic if female is fill his data
           this.AuthAPI.isFemaleFillGuardianData(this.token).subscribe((res) => {
             console.log(res);
-            if(res.result){
+            if (res.result) {
               this.router.navigate(["/home"])
             }
-            else{
+            else {
               this.openModal();
             }
           }, (err) => {
@@ -47,6 +50,9 @@ export class LoginComponent implements OnInit {
 
     }, (err) => {
       console.log(err);
+      if(err.error.messageError== 3){
+        alert("phone or password is wrong")
+      }
     })
 
   }
@@ -88,8 +94,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private AuthAPI: AuthorizationService, private router: Router, private API: ApiService) {
     // this.openModal()
-   
-    
+
+
     this.API.getApplicationInfo().subscribe((res) => {
       console.log(res);
       this.femaleTerms = res.termsAndConditionsForFemale;

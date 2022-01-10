@@ -10,7 +10,11 @@
           <div>
            <form [formGroup]="userData" action="">
             <input formControlName="PHONE" placeholder="Phone Number" class="form-control" type="text">
-            <input formControlName="COUNTRYCODE" placeholder="Country Code" class="form-control" type="text">
+            <!-- <input formControlName="COUNTRYCODE" placeholder="Country Code" class="form-control" type="text">-->
+              <select formControlName="COUNTRYCODE" class="form-control"  type="text" name="" id="">
+                    <option  class="d-none" value="Counrty Code">Counrty Code</option>
+                    <option *ngFor="let key of conntriesCodes" value="key">{{key}}</option>
+                </select> 
             <input formControlName="PASSWORD" placeholder="Password" class="form-control" type="password">
            </form>
             <b style="cursor: pointer;" routerLink="/forgetPassword"><p>Forget Password ?</p></b>

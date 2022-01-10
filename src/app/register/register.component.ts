@@ -16,8 +16,10 @@ import { AuthorizationService } from '../authorization.service';
 })
 export class RegisterComponent implements OnInit {
   gender: any = null;
-  token: any = ""
-  femaleTerms:any = ""
+  token: any = "";
+  femaleTerms: any = "";
+  conntriesCodes = ["+965", "+974", "+966", "+212", "+971", "+973", "+968", "+962", "+20", "+963", "+216", "+218", "+970",
+    "+213", "+222", "+961", "+249", "+964", "+967", "+253", "+252", "+269"]
   // separateDialCode = false;
   // SearchCountryField = SearchCountryField;
   // CountryISO = CountryISO;
@@ -163,7 +165,7 @@ export class RegisterComponent implements OnInit {
     confirmPassword: new FormControl("", [Validators.required]),
     gender: new FormControl(`${this.gender}`, [Validators.required]),
   })
-  constructor(private AuthAPI: AuthorizationService, private router: Router , private API:ApiService) {
+  constructor(private AuthAPI: AuthorizationService, private router: Router, private API: ApiService) {
 
     this.API.getApplicationInfo().subscribe((res) => {
       console.log(res);

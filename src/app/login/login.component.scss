@@ -125,11 +125,26 @@
     }
   }
 }
+// select{
+//   width: 70%;
+//   padding: 30px;
+//   border-radius: 15px;
+//   margin: 20px;
+//   border: none;
+//   outline: none;
+//   box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 3px;
 
-input {
+//   option {
+//       font-size: 20px;
+//       font-weight: 600;
+//       color: black;
+//   }
+// }
+input ,select {
   border: none;
   border-bottom: 2px #fed94c solid;
   margin: 50px 0px;
+ 
   &::placeholder {
     font-weight: 800;
     background-color: hsl(0, 0%, 98%);
