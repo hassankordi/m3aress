@@ -222,9 +222,9 @@
             </div> -->
         </div>
         <!-- <button id="modalAcceptBtn" class="btn">See More</button> -->
-        <button (click)="changeStatus(singleUserData , 0)"
+        <button [disabled]="!inPackange" (click)="changeStatus(singleUserData , 0)"
         style="color: white; background-color: red; margin: 15px ;" class="btn">Rejected</button>
-    <button (click)="changeStatus(singleUserData , 1)" style="background-color: #fed94c; margin: 15px;"
+    <button [disabled]="!inPackange" (click)="changeStatus(singleUserData , 1)" style="background-color: #fed94c; margin: 15px;"
         class="btn">Accepted</button>
 
     </div>

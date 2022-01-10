@@ -2,13 +2,13 @@
 
 <section class="nom-result-container">
     <div class="container">
-        <h2>Nomination Result</h2>
+        <h2 *ngIf="!noNom">Nomination Result</h2>
+        <h2 *ngIf="noNom">No Nomination Now</h2>
         <div (click)="openModal(item)" *ngFor="let item of nomResult" class="row row-container">
             <div class="col-lg-4 col-md-5 col-6">
                 <div class="info-con">
                    <p> {{item.name}}</p>
                    <p> <span>appropriate</span> <span style="color: #Fed94c;" class="per">{{item.accuracy | number: "1.0-1" }}%</span></p>
-
                 </div>
                 
             </div>
@@ -100,8 +100,8 @@
         </div>
         <!-- <button id="modalAcceptBtn" class="btn">See More</button> -->
         <div class="d-flex btns-con  mt-5">
-            <button (click)="changeStatus(singleUserData , 0)" style="color: white; background-color: red;" class="btn">Rejected</button>
-            <button (click)="changeStatus(singleUserData , 1)"  style="background-color: #fed94c;" class="btn">Accepted</button>
+            <button [disabled]="!inPackange" (click)="changeStatus(singleUserData , 0)" style="color: white; background-color: red;" class="btn">Rejected</button>
+            <button [disabled]="!inPackange" (click)="changeStatus(singleUserData , 1)"  style="background-color: #fed94c;" class="btn">Accepted</button>
             
 
         </div>

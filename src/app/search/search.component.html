@@ -25,7 +25,7 @@
             </div>
 
             <div class="col-md-4 col-12 btn-con">
-                <button  (click)="search()" class="btn"> Search <i class="fas fa-search"></i> </button>
+                <button [disabled]="!fillData" (click)="search()" class="btn"> Search <i class="fas fa-search"></i> </button>
             </div>
         </div>
     </div>
@@ -122,8 +122,8 @@
         </div>
         <!-- <button id="modalAcceptBtn" class="btn">See More</button> -->
         <div class="d-flex btns-con  mt-5">
-            <button (click)="acceptSearch(singleUserData , 0)" style="color: white; background-color: red;" class="btn">Rejected</button>
-            <button (click)="acceptSearch(singleUserData , 1)"  style="background-color: #fed94c;" class="btn">Accepted</button>
+            <button [disabled]="!inPackange" (click)="acceptSearch(singleUserData , 0)" style="color: white; background-color: red;" class="btn">Rejected</button>
+            <button [disabled]="!inPackange" (click)="acceptSearch(singleUserData , 1)"  style="background-color: #fed94c;" class="btn">Accepted</button>
             
 
         </div>

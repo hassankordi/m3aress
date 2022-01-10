@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { AuthorizationService } from '../authorization.service';
 
 @Component({
   selector: 'app-bending-maching',
@@ -18,17 +19,32 @@ export class BendingMachingComponent implements OnInit {
   // resourceStep: string = 'side-stepper-circle';
   // tapSidename: string = 'Set Time';
 
+  inPackange:boolean;
   gender: any = localStorage.getItem("gender");
   isFemale: boolean ;
   partnerData: any = {}
   token: any = localStorage.getItem("userToken")
-  constructor(private API: ApiService, private route: Router) {
-    alert(this.gender);
-    alert(this.isFemale);
-    this.isFemale = Boolean(this.gender) ;
-    alert(this.isFemale);
-    console.log(this.isFemale);
-    
+  constructor(private API: ApiService, private route: Router , private AuthAPI:AuthorizationService) {
+    this.AuthAPI.isUserSubscribeInPackage(this.token).subscribe((res)=>{
+      console.log(res);
+      this.inPackange = res.result
+
+    } , (err)=>{console.log(err);
+    })
+    // alert(this.gender);
+    // alert(this.isFemale);
+    // this.isFemale = this.gender ;
+    // // this.isFemale = Boolean(this.isFemale)
+    // alert(this.isFemale);
+    // console.log(this.isFemale);
+    if(this.gender =="false"){
+      this.isFemale = false
+
+    }
+    else{
+      this.isFemale = true
+
+    }
     // if (this.gender == false) {
     //   // female 
     //   this.isFemale = true
@@ -59,6 +75,9 @@ export class BendingMachingComponent implements OnInit {
   changePendingStatus(data, num) {
     this.API.ChangePendingStatus(this.token, data, num).subscribe((res) => {
       console.log(res);
+      if(res.messageSuccess ==1){
+        alert("تم")
+      }
     }, (err) => {
       console.log(err);
     })

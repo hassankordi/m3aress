@@ -13,6 +13,8 @@ export class SearchComponent implements OnInit {
 
   allLists: any
   token: any;
+  inPackange:boolean;
+  fillData:boolean;
   searchResults: any =  [];
   gender = false ;
   singleUserData:any = {
@@ -41,7 +43,24 @@ export class SearchComponent implements OnInit {
     })
 
 
+    this.AuthAPI.isUserSubscribeInPackage(token).subscribe((res)=>{
+      console.log(res);
+      this.inPackange = res.result
 
+    } , (err)=>{console.log(err);
+    })
+
+    this.AuthAPI.isUserFillData(this.token).subscribe((res)=>{
+      console.log(res);
+      this.fillData = res
+      if(res.isFillHisData ){
+        this.fillData = true
+      }else{
+        this.fillData = false
+      }
+
+    } , (err)=>{console.log(err);
+    })
   }
 
   searchData = new FormGroup({
@@ -87,6 +106,10 @@ export class SearchComponent implements OnInit {
         console.log(err);
         if (err.error.messageError == 101) {
           alert("يجب الانتظار ساعة قبل عملية البحث الاخري");
+        
+        }
+        if (err.error.messageError == 80) {
+          alert("يجب اكمال البيانات قبل عمليات البحث")
         
         }
       })

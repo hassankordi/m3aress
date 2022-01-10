@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ApiService } from '../api.service';
 import { AuthorizationService } from '../authorization.service';
@@ -10,17 +11,24 @@ import { AuthorizationService } from '../authorization.service';
 })
 export class PremiumComponent implements OnInit {
 
-  
+  inPackange:boolean;
   token: any = "";
   allData: any = {}
   isLogin = this.AuthApi.isLogin.getValue() ;
   singleUserData:any = {
     name:""
   };
-  constructor(private API: ApiService, private AuthApi: AuthorizationService) {
+  constructor(private API: ApiService, private AuthApi: AuthorizationService , private router:Router) {
 
     const token = localStorage.getItem("userToken")
-    this.token = token
+    this.token = token;
+
+    this.AuthApi.isUserSubscribeInPackage(token).subscribe((res)=>{
+      console.log(res);
+      this.inPackange = res.result
+
+    } , (err)=>{console.log(err);
+    })
   }
 
 
@@ -71,6 +79,10 @@ export class PremiumComponent implements OnInit {
           console.log(res);
         }, (err) => {
           console.log(err);
+          if(err.error.messageError==71){
+            alert("please fill your data and your partner data");
+            this.router.navigate(["/home"])
+          }
         })
       }
       else {
@@ -80,6 +92,10 @@ export class PremiumComponent implements OnInit {
           this.allData = res
         }, (err) => {
           console.log(err);
+          if(err.error.messageError==71){
+            alert("please fill your data and your partner data")
+            this.router.navigate(["/home"])
+          }
         })
       }
     }, (err) => {

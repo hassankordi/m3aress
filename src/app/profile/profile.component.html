@@ -455,8 +455,8 @@
                 </div>
 
             </div>
-            <button (click)="acceptRecommendation(1)" id="modalAcceptBtn" class="btn">Accept</button>
-            <button (click)="acceptRecommendation(0)" id="modalRejectBtn" class="btn">Accept</button>
+            <button [disabled]="!inPackange" (click)="acceptRecommendation(1)" id="modalAcceptBtn" class="btn">Accept</button>
+            <button [disabled]="!inPackange" (click)="acceptRecommendation(0)" id="modalRejectBtn" class="btn">Accept</button>
         </div>
         <!-- <button id="modalAcceptBtn" class="btn">Accept</button> -->
 

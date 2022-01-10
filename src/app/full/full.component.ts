@@ -18,6 +18,7 @@ export class FullComponent implements OnInit {
   textArr: any = []
   text: any = ""
 
+  inPackange:boolean;
 
   togglePremiumDetails: boolean = false
   randomData: any = {
@@ -111,7 +112,6 @@ export class FullComponent implements OnInit {
   }
   premiumDetails(id) {
     console.log(id);
-
     this.API.getRandomPremiumDetailes(this.token, id).subscribe((res) => {
       console.log(res);
       this.randomDataDetailes = res;
@@ -121,6 +121,13 @@ export class FullComponent implements OnInit {
       if (err.error.messageError == 60) {
         this.togglePremiumDetails = false;
         alert("يرجي التاكد انك مشترك في احدي الباقات");
+        this.router.navigate(["/subscription"])
+
+
+      }
+      if (err.error.messageError == 78) {
+        this.togglePremiumDetails = false;
+        alert("error in return premium subscription details or you are don't have nominations ");
         this.router.navigate(["/subscription"])
 
 
@@ -184,9 +191,15 @@ export class FullComponent implements OnInit {
     }, (err) => {
       console.log(err);
     });
+    this.AuthAPI.isUserSubscribeInPackage(token).subscribe((res)=>{
+      console.log(res);
+      this.inPackange = res.result
+
+    } , (err)=>{console.log(err);
+    })
 
 
-    let i = 0
+    let i = 0;
     setTimeout(() => {
       setInterval(() => {
 

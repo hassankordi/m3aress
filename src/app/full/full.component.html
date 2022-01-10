@@ -160,10 +160,10 @@
 
 
         <!-- randomDataDetailes -->
-        <button *ngIf="!togglePremiumDetails" id="seeMoreBtn" (click)="premiumDetails(randomData.id)" class="btn">See
+        <button  *ngIf="!togglePremiumDetails" id="seeMoreBtn" (click)="premiumDetails(randomData.id)" class="btn">See
             More</button>
 
-        <div *ngIf="togglePremiumDetails" class="row">
+        <div  *ngIf="togglePremiumDetails" class="row">
             <h4> More Details </h4>
             <div *ngFor="let key of randomDataDetailes.results" class="col-12 mt-3">
                 <div class="info-con">
@@ -173,9 +173,9 @@
                 </div>
 
             </div>
-            <button (click)="changeStatus(randomDataDetailes , 0)"
+            <button [disabled]="!inPackange" (click)="changeStatus(randomDataDetailes , 0)"
                 style="color: white; background-color: red; margin: 15px 0px;" class="btn">Rejected</button>
-            <button (click)="changeStatus(randomDataDetailes , 1)" style="background-color: #fed94c; margin: 15px 0px;"
+            <button [disabled]="!inPackange" (click)="changeStatus(randomDataDetailes , 1)" style="background-color: #fed94c; margin: 15px 0px;"
                 class="btn">Accepted</button>
         </div>
 

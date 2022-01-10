@@ -13,6 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ProfileComponent implements OnInit {
 
   inPending:boolean = false;
+  inPackange:boolean;
   token: any = localStorage.getItem("userToken");
   apperanceLength: any = [];
   apperanceWeight: any = [];
@@ -253,7 +254,12 @@ export class ProfileComponent implements OnInit {
 
     }
 
+    this.AuthAPI.isUserSubscribeInPackage(token).subscribe((res)=>{
+      console.log(res);
+      this.inPackange = res.result
 
+    } , (err)=>{console.log(err);
+    })
     this.AuthAPI.isUserFillData(this.token).subscribe((res)=>{
       if(res.isHavePendingMatching){
         this.inPending = res.isHavePendingMatching
