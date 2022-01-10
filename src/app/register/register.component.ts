@@ -35,7 +35,16 @@ export class RegisterComponent implements OnInit {
   // changePreferredCountries() {
   //   this.preferredCountries = [CountryISO.India, CountryISO.Canada];
   // }
-
+  userData = new FormGroup({
+    firstName: new FormControl("", [Validators.required]),
+    lastName: new FormControl("", [Validators.required]),
+    phone: new FormControl("", [Validators.required]),
+    countryCode: new FormControl("", [Validators.required]),
+    password: new FormControl("", [Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/)]),
+    confirmPassword: new FormControl("", [Validators.required]),
+    gender: new FormControl(`${this.gender}`, [Validators.required]),
+  })
+  
   parentData = new FormGroup({
     name: new FormControl("", [Validators.required]),
     phone: new FormControl("", [Validators.required]),
@@ -156,15 +165,7 @@ export class RegisterComponent implements OnInit {
     //  alert(this.gender);
 
   }
-  userData = new FormGroup({
-    firstName: new FormControl("", [Validators.required]),
-    lastName: new FormControl("", [Validators.required]),
-    phone: new FormControl("", [Validators.required]),
-    countryCode: new FormControl("", [Validators.required]),
-    password: new FormControl("", [Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/)]),
-    confirmPassword: new FormControl("", [Validators.required]),
-    gender: new FormControl(`${this.gender}`, [Validators.required]),
-  })
+ 
   constructor(private AuthAPI: AuthorizationService, private router: Router, private API: ApiService) {
 
     this.API.getApplicationInfo().subscribe((res) => {

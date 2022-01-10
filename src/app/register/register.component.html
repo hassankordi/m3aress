@@ -39,7 +39,7 @@
             <!-- <input formControlName="countryCode" placeholder="Country Code" class="form-control" type="text" /> -->
             <select formControlName="countryCode" class="form-control"  type="text" name="" id="">
               <option  class="d-none" value="">Country Code</option>
-              <option *ngFor="let key of conntriesCodes" value="key">{{key}}</option>
+              <option *ngFor="let key of conntriesCodes" value="{{key}}">{{key}}</option>
           </select> 
             <input formControlName="password" placeholder="Password" class="form-control" type="password" />
             <div *ngIf='

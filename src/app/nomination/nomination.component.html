@@ -57,7 +57,7 @@
                 <!-- <input formControlName="countryCode" placeholder="Counrty Code" type="text"> -->
                 <select formControlName="countryCode"  type="text" name="" id="">
                     <option  class="d-none" value="Counrty Code">Counrty Code</option>
-                    <option *ngFor="let key of conntriesCodes" value="key">{{key}}</option>
+                    <option *ngFor="let key of conntriesCodes" value="{{key}}">{{key}}</option>
                 </select>
 
             </form>
