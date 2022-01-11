@@ -12,7 +12,9 @@ import { LoansComponent } from './loans/loans.component';
 import { NominationComponent } from './nomination/nomination.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 import { ServiceComponent } from './service/service.component';
 import { PremiumComponent } from './premium/premium.component';
 import { NomResultComponent } from './nom-result/nom-result.component';
@@ -29,9 +31,11 @@ import { NewPassComponent } from './new-pass/new-pass.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+
 import { NgxNavbarModule } from 'ngx-bootstrap-navbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxMatIntlTelInputModule } from 'ngx-mat-intl-tel-input-angular-13';
+
 import { SearchComponent } from './search/search.component';
 
 
