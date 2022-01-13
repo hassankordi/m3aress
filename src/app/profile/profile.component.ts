@@ -293,9 +293,10 @@ export class ProfileComponent implements OnInit {
     // gender
 
     if(this.data.gender == true){
-      alert(this.data.gender)
+     
       this.API.systemRecomendations(this.token , 1).subscribe((res)=>{
         console.log(res);
+        this.openModal1()
         this.recomendationData = res.results ;
         (document.getElementById("myModal1") as HTMLElement).style.display = "block";
       } , (err)=>{
@@ -316,7 +317,10 @@ export class ProfileComponent implements OnInit {
 
     }else{
       // alert(this.data.gender)
-      this.API.systemRecomendations(this.token , 0).subscribe((res)=>{console.log(res);
+      this.API.systemRecomendations(this.token , 0).subscribe((res)=>{
+        this.openModal1()
+        this.recomendationData = res.results ;
+        console.log(res);
       } , (err)=>{
         // alert(err.error.messageError)
         if(err.error.messageError == 95){

@@ -19,6 +19,10 @@ export class BendingMachingComponent implements OnInit {
   // resourceStep: string = 'side-stepper-circle';
   // tapSidename: string = 'Set Time';
 
+  diff:any = [{
+    key:"",
+    value:""
+  }]
   inPackange:boolean;
   gender: any = localStorage.getItem("gender");
   isFemale: boolean ;
@@ -82,6 +86,56 @@ export class BendingMachingComponent implements OnInit {
       console.log(err);
     })
   }
+
+  getDiff(){
+    
+    this.API.getNominationsDetailes(this.token ,this.partnerData.id ).subscribe((res)=>{
+      this.openModal1()
+      console.log(res);
+      this.diff = res.results
+    } , (err)=>{console.log(err);
+    })
+  }
+  
+
+  closeModal1() {
+    // myModal
+   
+    (document.getElementById("myModal1") as HTMLElement).style.display = "none";
+    // alert("closse");
+  }
+  openModal1() {
+    // alert("open");
+
+    (document.getElementById("myModal1") as HTMLElement).style.display = "block";
+
+
+  }
+  // premiumDetails(id) {
+  //   console.log(id);
+  //   this.API.getRandomPremiumDetailes(this.token, id).subscribe((res) => {
+  //     console.log(res);
+  //     this.randomDataDetailes = res;
+  //     this.togglePremiumDetails = true;
+  //   }, (err) => {
+  //     console.log(err);
+  //     if (err.error.messageError == 60) {
+  //       this.togglePremiumDetails = false;
+  //       alert("يرجي التاكد انك مشترك في احدي الباقات");
+  //       this.router.navigate(["/subscription"])
+
+
+  //     }
+  //     if (err.error.messageError == 78) {
+  //       this.togglePremiumDetails = false;
+  //       alert("error in return premium subscription details or you are don't have nominations ");
+  //       this.router.navigate(["/subscription"])
+
+
+  //     }
+  //   })
+
+  // }
   ngOnInit(): void { }
   // sideStepper(stepNumber) {
   //   this.stepSide = stepNumber;

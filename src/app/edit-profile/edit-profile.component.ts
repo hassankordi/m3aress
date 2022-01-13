@@ -38,9 +38,9 @@ export class EditProfileComponent implements OnInit {
     FamilyName:new FormControl("",[Validators.required]),
     phone:new FormControl("",[Validators.required]),
     countryCode:new FormControl("",[Validators.required]),
-    guardianFemaleName:new FormControl("",[Validators.required ]),
-    guardianFemalePhone:new FormControl("",[Validators.required]),
-    guardianFemaleCountryCode:new FormControl("",[Validators.required]),
+    guardianFemaleName:new FormControl("",[]),
+    guardianFemalePhone:new FormControl("",[]),
+    guardianFemaleCountryCode:new FormControl("",[]),
   })
   constructor(private AuthAPI:AuthorizationService , private router:Router) {
     // alert(this.gender)

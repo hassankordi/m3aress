@@ -42,7 +42,7 @@
                     <div class="col-lg-5 col-6 text-end">
                         <p> <span>{{partnerData.name}}</span></p>
                         <p> <span>{{partnerData.phone}}</span></p>
-                        <p> <button class="btn">Diffrences</button></p>
+                        <p (click)="getDiff()"> <button class="btn">Diffrences</button></p>
                         <p> <span> {{partnerData.remainingDays}}</span></p>
                     </div>
 
@@ -63,6 +63,27 @@
     </div>
 </section>
 <app-send-us></app-send-us>
+
+<div id="myModal1" class="myModal">
+    <div class="modalBox">
+        <i (click)="closeModal1()" id="closeModal" class="fas fa-times"></i>
+       <h3>Diffrences</h3>
+        <div   class="row">
+             <div *ngFor="let key of diff" class="col-12 mt-3">
+                <div class="info-con">
+
+                    <span>{{key.key}}</span>
+                    <span>{{key.value[0]}}</span>
+                </div>
+
+            </div> 
+          
+        </div>
+
+    </div>
+
+
+</div>
 <!-- <div class="planning-route-side-stepper">
     <div class="side-stepper-circle-active shadow" (click)="sideStepper(1)"  [ngClass]="(stepSide > 1)?'side-stepper-circle-done':''">
         <p>asd</p>

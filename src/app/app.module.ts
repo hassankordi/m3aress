@@ -44,6 +44,7 @@ import { TabModule } from '@syncfusion/ej2-angular-navigations';
 import { AppearanceDataComponent } from './appearance-data/appearance-data.component';
 import { MaritalDetailesComponent } from './marital-detailes/marital-detailes.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     AppearanceDataComponent,
     MaritalDetailesComponent,
     ChangePasswordComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

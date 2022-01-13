@@ -14,6 +14,7 @@ import { MaritalDetailesComponent } from './marital-detailes/marital-detailes.co
 import { NewPassComponent } from './new-pass/new-pass.component';
 import { NomResultComponent } from './nom-result/nom-result.component';
 import { NominationComponent } from './nomination/nomination.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { PremiumComponent } from './premium/premium.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
@@ -53,12 +54,15 @@ const routes: Routes = [
   {path:"newPassword" , component:NewPassComponent} , 
   {path:"search" , component:SearchComponent} , 
 
+  {path:"**" , component:NotFoundComponent} , 
+
+
   
   
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes , {useHash:true})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

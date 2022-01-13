@@ -449,6 +449,8 @@
         <div class="row">
             <div class="col-12 mt-5">
                 
+                <!-- <h3 *ngIf="recomendationData.diffrences.length== 0"> NO DIFFRENCES</h3> -->
+                <h3>{{recomendationData.name}}</h3>
                 <div *ngFor="let key of recomendationData.diffrences " class="info-con">
                     <p>{{key.value[0]}}</p>
                     <p>{{key.key}}</p>
@@ -456,7 +458,7 @@
 
             </div>
             <button [disabled]="!inPackange" (click)="acceptRecommendation(1)" id="modalAcceptBtn" class="btn">Accept</button>
-            <button [disabled]="!inPackange" (click)="acceptRecommendation(0)" id="modalRejectBtn" class="btn">Accept</button>
+            <button [disabled]="!inPackange" (click)="acceptRecommendation(0)" id="modalRejectBtn" class="btn">Reject</button>
         </div>
         <!-- <button id="modalAcceptBtn" class="btn">Accept</button> -->
 
