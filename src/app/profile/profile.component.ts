@@ -303,6 +303,7 @@ export class ProfileComponent implements OnInit {
         if(err.error.messageError ==95){
           alert("ليس لديك ترشيحات لانك بالفعل قبلت مستخدم من الترشيحات")
         }
+        
        else if(err.error.messageError ==92){
           alert("you are in pending maching now")
         }
