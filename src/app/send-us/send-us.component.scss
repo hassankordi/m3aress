@@ -89,3 +89,108 @@
         
     }
 }
+
+
+
+
+@media all and (max-width: 450px) and (min-width: 50px) {
+   
+  
+    .sendUs-container {
+        // background-color: tomato;
+        font-family: 'Josefin Sans', sans-serif;
+        padding: 70px 0px;
+        width: 100%;
+        background-image: url("../../assets/5png/Group\ 10132.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        h2 {
+            color: white;
+            font-weight: 900;
+        }
+        .input-con {
+            margin: 12px;
+            input,
+            textarea {
+                border-radius: 8px;
+                padding: 6px 12px;
+                &::placeholder{
+                    color: black;
+                    font-weight: 700;
+                    font-size: 12px;
+                }
+            }
+        }
+        button {
+            margin-top: 30px;
+            padding: 9px 17px;
+            background-image: linear-gradient(#fed94c, #f3c221);
+            font-weight: 700;
+            font-size: 12px;
+            
+        }
+    
+        .footer-grid-container{
+            // background-color: tomato;
+            border: white 2px solid;
+            margin-top: 50px;
+            .footer-menu{
+                border: white 2px solid;
+                padding: 15px;
+                color: white;
+                font-weight: 700;
+                font-size: 10px;
+                ul{
+                    padding: 0;
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-evenly;
+                    li{
+                        cursor: pointer;
+                    }
+                }
+            }
+    
+            // 3 grids
+            .grid-container{
+                color: white;
+                text-align: center;
+                font-weight: 700;
+                padding: 30px;
+                border: white 2px solid;
+                .footer-icons-container{
+                    padding: 30px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    img{
+                        width: 25px;
+                        margin: 5px;
+                    }
+                }
+                p{
+                    font-size: 20px;
+                }
+            }
+            .footer-grid-brand{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                img{
+                    width: 70px;
+                    margin: 15px 0px;
+                }
+    
+            }
+            .footer-grid-data{
+                span{
+                    margin: 15px;
+                    font-size: 20px;
+                }
+            }
+            
+        }
+    }
+  }
+  

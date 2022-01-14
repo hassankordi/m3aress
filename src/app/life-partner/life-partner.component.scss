@@ -86,7 +86,7 @@
             background-image: linear-gradient(#fed94c, #f3c221);
             padding: 12px 40px;
             font-weight: 700;
-            width: 25%;
+            // width: 25%;
             border-radius: 30px;
         }
 
@@ -201,4 +201,150 @@
             font-weight: 500;
         }
     }
+}
+
+
+@media all and (max-width: 450px) and (min-width: 50px) {
+
+    .lifePartner-container {
+        // margin: 50px 0px;
+        font-family: "Josefin Sans", sans-serif;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-align: center;
+        h3 {
+            text-align: start;
+            font-family: "Josefin Sans", sans-serif;
+            font-weight: 700;
+        }
+    
+    
+    
+        .appearance-box {
+            background-color: hsl(0, 0%, 98%);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0px;
+            padding: 30px 50px;
+            overflow: hidden;
+            .myHeaderText {
+                font-size: 18px;
+               
+            }
+         
+            .e-active .e-tab-text{
+                color: #fed94c !important;
+            }
+            .e-indicator {
+                background-color: #f3c221 !important;
+            }
+           
+            .form-control{
+                padding: 0 !important;
+                // background-color: teal !important;
+            }
+    
+            .profile-inputs {
+                // background-color: teal;
+                display: flex;
+                align-items: center;
+    
+                background-color: hsl(0, 0%, 98%);
+                div {
+                    width: 100%;
+                    background-color: hsl(0, 0%, 98%);
+                    input , select , option {
+                        border: none;
+                        border-bottom: 2px #fed94c solid;
+                        margin: 50px 0px;
+                        padding:30px 50px ;
+                        background-color: hsl(0, 0%, 98%);
+                        
+                        font-weight: 600;
+                        padding: 30px 50px;
+                        font-size: 16px;
+                       
+                        &::placeholder {
+                            font-weight: 600;
+                            padding: 30px 50px;
+                            font-size: 16px;
+                            background-color: hsl(0, 0%, 98%);
+                        }
+                    }
+                    b {
+                        p {
+                            text-align: end;
+                            // background-color: #fed94c;
+                        }
+                    }
+                    p {
+                        text-align: center;
+                        margin: 30px;
+                        span {
+                            color: #fed94c;
+                            font-weight: 800;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .com-btn {
+                background-image: linear-gradient(#fed94c, #f3c221);
+                padding: 12px 40px;
+                font-weight: 700;
+                // width: 25%;
+                border-radius: 30px;
+            }
+    
+            .op {
+                padding: 20px;
+                font-weight: 700;
+                font-size: 20px;
+                margin: 20px;
+            }
+        }
+       
+        // .Apperance-box {
+        //     background-color: hsl(0, 0%, 98%);
+        //     text-align: center;
+        //     display: flex;
+        //     justify-content: center;
+        //     flex-wrap: wrap;
+        //     // margin: 30px 0px;
+        //     padding: 30px 0px;
+        //     h3 {
+        //         display: inline-block;
+        //         text-align: center;
+        //     }
+        //     select{
+        //         font-weight: 700;
+        //         width: 80%;
+        //         border: none;
+        //         border-bottom: 1px solid #FED94C;
+        //         padding: 20px;
+        //         margin: 30px;
+        //         outline: none;
+        //         background-color: hsl(0, 0%, 98%);
+        //     }
+        //     .com-btn{
+        //         background-image: linear-gradient(#FED94C ,#F3C221);
+        //         padding: 12px 40px;
+        //         font-weight: 700;
+        //         width: 25%;
+        //         border-radius: 30px;
+        //     }
+            
+        //     .op{
+        //         padding: 20px;
+        //         font-weight: 700;
+        //         font-size: 20px;
+        //         margin: 20px;
+        //     }
+        // }
+    }
+    
+
+
 }

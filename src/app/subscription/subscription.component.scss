@@ -227,3 +227,161 @@
         }
     }
 }
+
+
+
+@media all and (max-width: 450px) and (min-width: 50px) {
+
+    .sub-container {
+        font-family: "Josefin Sans", sans-serif;
+        margin: 50px 0px;
+        .sub-menu {
+            // background-color: tomato;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+    
+            li {
+                font-weight: 700;
+                // margin:  30px;
+                letter-spacing: 2px;
+                cursor: pointer;
+            }
+        }
+    
+        .myRow {
+            display: flex;
+            justify-content: space-between;
+            // padding: 30px ;
+            margin: 0;
+            // justify-content: space-between;
+            // background-color: tomato;
+            // height: 100vh;s
+    
+            
+        }
+        .main-img {
+            margin-top: 10px;
+            background-image: url("../../assets/5png/5e4d119238539.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            padding: 100px 50px;
+            cursor: pointer;
+            // padding: 50px;
+            // margin: 10px 80px 10px 10px;
+            // margin: 50px;
+    
+            .layer {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                background-color: black;
+                opacity: 0.5;
+                // border-radius: 8px;
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+            }
+            // .pop-up{
+            //     position: absolute;
+            //     background-color: tomato;
+            //     top: 0;
+            //     left: 0;
+            //     right: 0;
+            //     bottom: 0;
+            //     z-index: 555;
+            // }
+        }
+        .sub-item {
+            cursor: pointer;
+            text-align: center;
+            color: white;
+            font-weight: 800;
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+            .layer {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                background-color: black;
+                opacity: 0.5;
+                // margin: 0px 10px;
+                // padding: 20px;
+                // border-radius: 8px;
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+            // height: 100%;
+            p , span {
+                font-size: 16px;
+                position: relative;
+                z-index: 5;
+            }
+            button {
+                position: relative;
+                z-index: 5;
+                font-weight: 800;
+                background-image: linear-gradient(#fed94c, #f3c221);
+            }
+        }
+    
+        .left-item {
+            padding: 30px;
+            background-image: url("../../assets/5png/5e68d5e26153c.png");
+            height: 330px;
+            // margin: 10px;
+    
+            margin-top: 30px;
+            // margin-right: 1rem;
+    
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+    
+            display: flex;
+            align-items: flex-end;
+        }
+    
+        .right-item {
+            padding: 30px;
+            height: 330px;
+            background-image: url("../../assets/5png/5e68d51c156bb.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-top: 30px;
+            margin-left: 1rem;
+            border-bottom-right-radius: 30px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            // z-index: 2;
+            p,
+            span {
+                position: relative;
+                z-index: 4;
+            }
+            .layer {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                background-image: linear-gradient(to top, #000, #e7e9eb);
+                opacity: 0.3;
+                border-bottom-right-radius: 30px;
+            }
+        }
+    }
+    
+
+}

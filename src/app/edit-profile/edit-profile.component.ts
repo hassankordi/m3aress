@@ -17,8 +17,8 @@ export class EditProfileComponent implements OnInit {
     console.log(this.userData);
     this.AuthAPI.editProfile(this.token,this.userData.value , this.gender).subscribe((res)=>{
       // localStorage.setItem("userToken" , res.token)
-      alert("تم التسجيل")
-      this.router.navigate["/profile"];
+      alert("تم ")
+      this.router.navigate(["/profile"]);
       
 
       console.log(res);
