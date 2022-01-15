@@ -33,8 +33,8 @@ export class AppComponent {
 
   ngOnInit() {
     if (environment.production) {
-      if (location.protocol === 'http:') {
-        window.location.href = location.href.replace('http', 'https');
+      if (location.protocol === 'https:') {
+        window.location.href = location.href.replace('https', 'http');
       }
     }
     const token: any = localStorage.getItem('userToken');
