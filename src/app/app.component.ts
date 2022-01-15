@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ApiService } from './api.service';
 import { AuthorizationService } from './authorization.service';
+import { Location } from '@angular/common';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,7 @@ import { AuthorizationService } from './authorization.service';
 })
 export class AppComponent {
   title = 'ma3ares';
+  location: Location;
   // {"+965", "+974", "+966", "+212", "+971", "+973", "+968", "+962", "+20", "+963", "+216", "+218", "+970",
   // "+213", "+222", "+961", "+249", "+964", "+967", "+253", "+252", "+269"}
 
@@ -28,8 +31,12 @@ export class AppComponent {
   }
 
 
-  
-  ngOnInit(): void {
+  ngOnInit() {
+    if (environment.production) {
+      if (location.protocol === 'http:') {
+        window.location.href = location.href.replace('http', 'https');
+      }
+    }
     const token: any = localStorage.getItem('userToken');
     const helper = new JwtHelperService();
     const isExpired = helper.isTokenExpired(token);
